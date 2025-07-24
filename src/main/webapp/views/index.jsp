@@ -52,6 +52,25 @@
         object-fit: contain !important;  /* 짤리지 않고 다 보이게 */
     }
 
+    .category-box {
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+    }
+
+    .category-box .category-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+
+
 </style>
 
 
@@ -653,11 +672,12 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="cat-item image-zoom-effect">
-                        <div class="image-holder">
+                        <div class="image-holder category-box">
                             <a href="index.html">
-                                <img src="image/cat-item1.jpg" alt="categories" class="product-image img-fluid">
+                                <img src="image/categori.jpg" alt="Shop for men" class="category-img">
                             </a>
                         </div>
+
                         <div class="category-content">
                             <div class="product-button">
                                 <a href="index.html" class="btn btn-common text-uppercase">Shop for men</a>
@@ -667,11 +687,12 @@
                 </div>
                 <div class="col-md-4">
                     <div class="cat-item image-zoom-effect">
-                        <div class="image-holder">
+                        <div class="image-holder category-box">
                             <a href="index.html">
-                                <img src="image/cat-item2.jpg" alt="categories" class="product-image img-fluid">
+                                <img src="image/categori1.jpg" alt="Shop for women" class="category-img">
                             </a>
                         </div>
+
                         <div class="category-content">
                             <div class="product-button">
                                 <a href="index.html" class="btn btn-common text-uppercase">Shop for women</a>
@@ -681,11 +702,12 @@
                 </div>
                 <div class="col-md-4">
                     <div class="cat-item image-zoom-effect">
-                        <div class="image-holder">
+                        <div class="image-holder category-box">
                             <a href="index.html">
-                                <img src="image/cat-item3.jpg" alt="categories" class="product-image img-fluid">
+                                <img src="image/categori2.jpg" alt="Shop accessories" class="category-img">
                             </a>
                         </div>
+
                         <div class="category-content">
                             <div class="product-button">
                                 <a href="index.html" class="btn btn-common text-uppercase">Shop accessories</a>
