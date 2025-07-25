@@ -536,7 +536,7 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="index.html" class="item-anchor">Soft leather jackets</a>
+                                    <a href="/product" class="item-anchor">Soft leather jackets</a>
                                 </h5>
                                 <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
                                 <div class="btn-left">
@@ -675,7 +675,8 @@
                         <use xlink:href="#calendar"></use>
                     </svg>
                     <h4 class="element-title text-capitalize my-3">Book An Appointment</h4>
-                    <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+                    <p>연예인 정보 구매 전, 전문가와 직접 상담해보세요.
+                        맞춤형 정보 큐레이션을 도와드립니다.</p>
                 </div>
             </div>
             <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="300">
@@ -684,7 +685,8 @@
                         <use xlink:href="#shopping-bag"></use>
                     </svg>
                     <h4 class="element-title text-capitalize my-3">Pick up in store</h4>
-                    <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+                    <p>구매 즉시 원하는 연예인 정보를 다운로드하세요.
+                        즉시 이용 가능한 PDF/이미지 제공.</p>
                 </div>
             </div>
             <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="600">
@@ -693,7 +695,8 @@
                         <use xlink:href="#gift"></use>
                     </svg>
                     <h4 class="element-title text-capitalize my-3">Special packaging</h4>
-                    <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+                    <p>기본 정보는 물론 팬들만 아는 비하인드까지!
+                        희소성 있는 자료로 구성됩니다.</p>
                 </div>
             </div>
             <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="900">
@@ -702,7 +705,8 @@
                         <use xlink:href="#arrow-cycle"></use>
                     </svg>
                     <h4 class="element-title text-capitalize my-3">free global returns</h4>
-                    <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+                    <p>구매한 정보가 기대에 미치지 못했다면?
+                        7일 내 전액 환불해드립니다.</p>
                 </div>
             </div>
         </div>
