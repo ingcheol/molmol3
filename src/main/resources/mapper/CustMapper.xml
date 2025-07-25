@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.sm.molshop3.repository.CustRepository">
+
+    <!-- resultMap: DB 컬럼 ↔ DTO 필드 매핑 -->
+    <resultMap id="custMap" type="edu.sm.molshop3.dto.Cust">
+        <id property="custId" column="cust_id"/>
+        <result property="custName" column="cust_name"/>
+        <result property="pwd" column="pwd"/>
+        <result property="address" column="address"/>
+        <result property="phone" column="phone"/>
+        <result property="regDate" column="reg_date"/>
+        <result property="updateDate" column="update_date"/>
+    </resultMap>
+
+    <select id="select" parameterType="String" resultMap="custMap">
+        SELECT * FROM cust WHERE cust_id=#{custId}
+    </select>
+
+    <select id="selectAll" resultMap="custMap">
+        SELECT * FROM cust
+    </select>
+
+    <insert id="insert" parameterType="edu.sm.molshop3.dto.Cust">
+        INSERT INTO cust (cust_id, cust_name, pwd, address, phone)
+        VALUES (#{custId}, #{custName}, #{pwd}, #{address}, #{phone})
+    </insert>
+
+    <update id="update" parameterType="edu.sm.molshop3.dto.Cust">
+        UPDATE cust
+        SET cust_name = #{custName},
+            pwd = #{pwd},
+            address = #{address},
+            phone = #{phone},
+            update_date = NOW()
+        WHERE cust_id = #{custId}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM cust WHERE cust_id = #{custId}
+    </delete>
+
+</mapper>

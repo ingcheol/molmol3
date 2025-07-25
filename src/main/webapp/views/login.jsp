@@ -159,9 +159,9 @@
 <div style="width: 400px; margin: 100px auto;">
   <h2 style="text-align: left;">로그인</h2>
 
-  <form action="/login" method="post">
-    <input type="text" name="username" placeholder="아이디" class="form-field"/>
-    <input type="password" name="password" placeholder="비밀번호" class="form-field"/>
+  <form action="/loginimpl" method="post">
+    <input type="text" name="id" placeholder="아이디" class="form-field"/>
+    <input type="password" name="pw" placeholder="비밀번호" class="form-field"/>
 
     <div style="display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
       <label><input type="checkbox" name="remember"/> 아이디 저장</label>
