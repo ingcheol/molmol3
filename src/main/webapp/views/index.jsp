@@ -69,6 +69,48 @@
         display: block;
     }
 
+    .collection-content {
+        font-size: 18px;
+        line-height: 1.8;        /* ✅ 줄 간격 넉넉하게 */
+        color: #333;
+    }
+
+    .collection-content h3 {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 24px;
+    }
+
+    .collection-content p {
+        margin-bottom: 24px;     /* ✅ 문단 아래 여백 추가 */
+        white-space: pre-line;   /* ✅ 줄바꿈 유지 (HTML에서 \n처럼) */
+    }
+
+    .collection-content .btn {
+        padding: 12px 28px;
+        font-size: 16px;
+        border-radius: 6px;
+        letter-spacing: 0.5px;
+    }
+
+    /* 하단 더 콜렉션 문구 스타일 */
+    .title-xlarge {
+        font-size: 40px;
+        font-weight: 800;
+        padding: 24px 32px;
+        background-color: #fff5ec; /* 연한 배경으로 강조 */
+        border-radius: 16px;
+        text-align: center;
+
+        color: transparent;
+        background-image: linear-gradient(to right, #FF6B6B, #FFA84B); /* 🔥 이미지 색 참조 */
+        background-clip: text;
+        -webkit-background-clip: text;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        line-height: 1.4;
+    }
 
 
 </style>
@@ -101,6 +143,7 @@
 </head>
 
 <body class="homepage">
+<div style="background-color: white">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <defs>
         <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 15 15">
@@ -493,7 +536,7 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="index.html" class="item-anchor">Soft leather jackets</a>
+                                    <a href="/product" class="item-anchor">Soft leather jackets</a>
                                 </h5>
                                 <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
                                 <div class="btn-left">
@@ -632,7 +675,8 @@
                         <use xlink:href="#calendar"></use>
                     </svg>
                     <h4 class="element-title text-capitalize my-3">Book An Appointment</h4>
-                    <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+                    <p>연예인 정보 구매 전, 전문가와 직접 상담해보세요.
+                        맞춤형 정보 큐레이션을 도와드립니다.</p>
                 </div>
             </div>
             <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="300">
@@ -641,7 +685,8 @@
                         <use xlink:href="#shopping-bag"></use>
                     </svg>
                     <h4 class="element-title text-capitalize my-3">Pick up in store</h4>
-                    <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+                    <p>구매 즉시 원하는 연예인 정보를 다운로드하세요.
+                        즉시 이용 가능한 PDF/이미지 제공.</p>
                 </div>
             </div>
             <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="600">
@@ -650,7 +695,8 @@
                         <use xlink:href="#gift"></use>
                     </svg>
                     <h4 class="element-title text-capitalize my-3">Special packaging</h4>
-                    <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+                    <p>기본 정보는 물론 팬들만 아는 비하인드까지!
+                        희소성 있는 자료로 구성됩니다.</p>
                 </div>
             </div>
             <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="900">
@@ -659,7 +705,8 @@
                         <use xlink:href="#arrow-cycle"></use>
                     </svg>
                     <h4 class="element-title text-capitalize my-3">free global returns</h4>
-                    <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+                    <p>구매한 정보가 기대에 미치지 못했다면?
+                        7일 내 전액 환불해드립니다.</p>
                 </div>
             </div>
         </div>
@@ -894,7 +941,7 @@
 <section class="collection bg-light position-relative py-5">
     <div class="container">
         <div class="row">
-            <div class="title-xlarge text-uppercase txt-fx domino">Collection</div>
+            <div class="title-xlarge text-uppercase txt-fx domino">THE COLLECTION</div>
             <div class="collection-item d-flex flex-wrap my-5">
                 <div class="col-md-6 column-container">
                     <div class="image-holder special-holder">
@@ -904,12 +951,16 @@
                 </div>
                 <div class="col-md-6 column-container bg-white">
                     <div class="collection-content p-5 m-0 m-md-5">
-                        <h3 class="element-title text-uppercase">Classic winter collection</h3>
-                        <p>Dignissim lacus, turpis ut suspendisse vel tellus. Turpis purus, gravida orci, fringilla a. Ac sed eu
-                            fringilla odio mi. Consequat pharetra at magna imperdiet cursus ac faucibus sit libero. Ultricies quam
-                            nunc, lorem sit lorem urna, pretium aliquam ut. In vel, quis donec dolor id in. Pulvinar commodo mollis
-                            diam sed facilisis at cursus imperdiet cursus ac faucibus sit faucibus sit libero.</p>
-                        <a href="#" class="btn btn-dark text-uppercase mt-3">Shop Collection</a>
+                        <h3 class="element-title text-uppercase">스타일은 타고나는 게 아니라, 선택하는 것</h3>
+                        <p>세상의 시선을 사로잡는 단 한 사람.
+                            그녀가 선택한 그 순간, 평범함은 사라지고
+                            클래스는 완성된다.
+
+                            지금, 당신의 일상에 럭셔리를 입히세요.
+                            화제의 착장 그대로, 단 한 번의 클릭으로.
+                        </p>
+                        <a href="#" class="btn btn-dark text-uppercase mt-3">같은 스타일 바로 구매하기
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1114,7 +1165,7 @@
 
 
 
-
+</div>
 </body>
 
 </html>
