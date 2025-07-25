@@ -1,11 +1,10 @@
 package edu.sm.molshop3.repository;
 
-import edu.sm.molshop3.dto.CustDto;
+import edu.sm.molshop3.dto.Cust;
+import edu.sm.molshop3.frame.SmRepository;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 
 @Mapper
-public interface CustRepository {
-    @Select("SELECT * FROM cust WHERE id = #{id}")
-    CustDto findById(String id);
+public interface CustRepository extends SmRepository<Cust, String> {
+    // SmRepository에 정의된 메서드들을 그대로 사용
 }
