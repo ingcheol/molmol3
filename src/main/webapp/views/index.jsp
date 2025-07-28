@@ -378,16 +378,13 @@
                                    aria-haspopup="true" aria-expanded="false">Home</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownHome">
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Home Layout 1</a>
+                                        <a href="index.html" class="dropdown-item item-anchor">베스트 착장</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Home Layout 2 </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">신상 착장</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Home Layout 3 </a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Home Layout 4 </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">세트 착장 모음</a>
                                     </li>
                                 </ul>
                             </li>
@@ -396,22 +393,22 @@
                                    aria-haspopup="true" aria-expanded="false">Shop</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownShop">
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Shop Sidebar </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">상의</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Shop Three Column </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">하의</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Shop Three Column Wide </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">아우터</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Shop Four Column </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">가방</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Shop Four Column Wide </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">신발</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Shop Six Column </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">액세서리</a>
                                     </li>
                                 </ul>
                             </li>
@@ -420,22 +417,16 @@
                                    aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Blog Classic </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">스타 착용 갤러리</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Blog Grid with Sidebar </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">스탕일링 팁</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Blog Grid Four Column </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">사용자 후기</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Blog No Sidebar </a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Blog Right Sidebar </a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Single Post </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">스타일 영상</a>
                                     </li>
                                 </ul>
                             </li>
@@ -444,22 +435,19 @@
                                    aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">About </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">내 정보</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Cart </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">찜 목록</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Checkout </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">장바구니</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Coming Soon </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">주문 내역</a>
                                     </li>
                                     <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Contact </a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html" class="dropdown-item item-anchor">Error Page </a>
+                                        <a href="index.html" class="dropdown-item item-anchor">리뷰 작성</a>
                                     </li>
                                 </ul>
                             </li>
@@ -518,7 +506,7 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="index.html" class="item-anchor">Soft leather jackets</a>
+                                    <a href="/product?id=karina8" class="item-anchor">카리나 공항 패션</a>
                                 </h5>
                                 <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
                                 <div class="btn-left">
@@ -536,7 +524,7 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="/product" class="item-anchor">Soft leather jackets</a>
+                                    <a href="/product?id=karina1" class="item-anchor">카리나 공항 패션</a>
                                 </h5>
                                 <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
                                 <div class="btn-left">
@@ -554,7 +542,7 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="index.html" class="item-anchor">Soft leather jackets</a>
+                                    <a href="/product?id=karina2" class="item-anchor">카리나 공항 패션</a>
                                 </h5>
                                 <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
                                 <div class="btn-left">
@@ -572,7 +560,7 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="index.html" class="item-anchor">Soft leather jackets</a>
+                                    <a href="/product?id=karina3" class="item-anchor">카리나 공항 패션</a>
                                 </h5>
                                 <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
                                 <div class="btn-left">
@@ -590,7 +578,7 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="index.html" class="item-anchor">Out crop sweater</a>
+                                    <a href="/product?id=karina4" class="item-anchor">카리나 공항 패션</a>
                                 </h5>
                                 <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
                                 <div class="btn-left">
@@ -608,7 +596,7 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="index.html" class="item-anchor">Soft leather jackets</a>
+                                    <a href="/product?id=karina5" class="item-anchor">카리나 공항 패션</a>
                                 </h5>
                                 <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
                                 <div class="btn-left">
@@ -626,7 +614,7 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="index.html" class="item-anchor">Soft leather jackets</a>
+                                    <a href="/product?id=karina6" class="item-anchor">카리나 공항 패션</a>
                                 </h5>
                                 <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
                                 <div class="btn-left">
@@ -644,7 +632,7 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="index.html" class="item-anchor">Soft leather jackets</a>
+                                    <a href="/product?id=karina7" class="item-anchor">카리나 공항 패션</a>
                                 </h5>
                                 <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
                                 <div class="btn-left">
