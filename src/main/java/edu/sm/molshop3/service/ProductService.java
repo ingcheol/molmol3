@@ -1,4 +1,4 @@
-package edu.sm.molshop3.Service;
+package edu.sm.molshop3.service;
 
 import edu.sm.molshop3.dto.ProductDto;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package edu.sm.molshop3.Controller;
+package edu.sm.molshop3.controller;
 
-import edu.sm.molshop3.Service.ProductService;
+import edu.sm.molshop3.service.ProductService;
 import edu.sm.molshop3.dto.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

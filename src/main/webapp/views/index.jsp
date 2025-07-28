@@ -480,12 +480,30 @@
                                             CART <span class="cart-count ms-1">(0)</span>
                                         </a>
                                     </li>
-                                    <li class="d-inline-block">
-                                        <a href="/login" class="nav-login d-flex align-items-center text-uppercase mx-3 fw-bold"
-                                           style="font-size: 20px; line-height: 1;">
-                                            LOGIN
-                                        </a>
-                                    </li>
+                                    <c:choose>
+                                        <c:when test="${not empty logincust}">
+                                            <li class="d-inline-block">
+            <span class="nav-login d-flex align-items-center text-uppercase mx-3 fw-bold" style="font-size: 20px;">
+                ${logincust.custName} 님
+            </span>
+                                            </li>
+                                            <li class="d-inline-block">
+                                                <a href="/logout" class="nav-login d-flex align-items-center text-uppercase mx-3 fw-bold"
+                                                   style="font-size: 20px; line-height: 1;">
+                                                    LOGOUT
+                                                </a>
+                                            </li>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <li class="d-inline-block">
+                                                <a href="/login" class="nav-login d-flex align-items-center text-uppercase mx-3 fw-bold"
+                                                   style="font-size: 20px; line-height: 1;">
+                                                    LOGIN
+                                                </a>
+                                            </li>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </ul>
                             </div>
 

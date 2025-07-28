@@ -10,11 +10,11 @@ import java.sql.Timestamp;
 @Setter
 @Builder
 public class Cust {
-    private String cust_id;
-    private String cust_name;
-    private String cust_pwd;
+    private String custPhone;
+    private String custId;
+    private String custPwd;
+    private String custName;
     private String address;
-    private String phone;
-    private Timestamp reg_date;
-    private Timestamp update_date;
+    private Timestamp custRegdate;
+    private Timestamp custUpdate;
 }
