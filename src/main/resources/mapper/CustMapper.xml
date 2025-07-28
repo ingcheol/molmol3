@@ -5,47 +5,42 @@
 
 <mapper namespace="edu.sm.molshop3.repository.CustRepository">
 
-    <!-- resultMap: DB 컬럼 ↔ DTO 필드 매핑 -->
     <resultMap id="custMap" type="edu.sm.molshop3.dto.Cust">
         <id property="custId" column="cust_id"/>
         <result property="custName" column="cust_name"/>
         <result property="custPwd" column="cust_pwd"/>
         <result property="address" column="address"/>
         <result property="custPhone" column="phone"/>
+        <result property="custEmail" column="cust_email"/> <!-- 병합 추가 -->
         <result property="custRegdate" column="reg_date"/>
         <result property="custUpdate" column="update_date"/>
     </resultMap>
 
-    <!-- 단일 조회 -->
     <select id="select" parameterType="String" resultMap="custMap">
         SELECT * FROM cust WHERE cust_id = #{custId}
     </select>
 
-    <!-- 전체 조회 -->
     <select id="selectAll" resultMap="custMap">
         SELECT * FROM cust
     </select>
 
-    <!-- 삽입 -->
     <insert id="insert" parameterType="edu.sm.molshop3.dto.Cust">
-        INSERT INTO cust (cust_id, cust_name, cust_pwd, address, phone, reg_date)
-        VALUES (#{custId}, #{custName}, #{custPwd}, #{address}, #{custPhone}, NOW())
+        INSERT INTO cust (cust_id, cust_name, cust_pwd, address, phone, cust_email, reg_date)
+        VALUES (#{custId}, #{custName}, #{custPwd}, #{address}, #{custPhone}, #{custEmail}, NOW())
     </insert>
 
-    <!-- 수정 -->
     <update id="update" parameterType="edu.sm.molshop3.dto.Cust">
         UPDATE cust
         SET cust_name = #{custName},
-            cust_pwd = #{custPwd},
-            address = #{address},
-            phone = #{custPhone},
-            update_date = NOW()
+        cust_pwd = #{custPwd},
+        address = #{address},
+        phone = #{custPhone},
+        cust_email = #{custEmail}, <!-- 병합 추가 -->
+        update_date = NOW()
         WHERE cust_id = #{custId}
     </update>
 
-    <!-- 삭제 -->
     <delete id="delete" parameterType="String">
         DELETE FROM cust WHERE cust_id = #{custId}
     </delete>
-
 </mapper>
