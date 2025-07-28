@@ -1,7 +1,7 @@
 package edu.sm.molshop3.controller;
 
+import edu.sm.molshop3.dto.Product;
 import edu.sm.molshop3.service.ProductService;
-import edu.sm.molshop3.dto.ProductDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,13 +13,21 @@ public class ProductController {
 
     private final ProductService productService;
 
+    // 예: /product?id=3
     @GetMapping("/product")
-    public String productPage(@RequestParam(required = false) String id, Model model) {
+    public String productPage(@RequestParam(required = false) Integer id, Model model) {
         if (id == null) {
-            return "redirect:/"; // 또는 에러 페이지로
+            return "redirect:/"; // 또는 오류 페이지
         }
-        ProductDto p = productService.getProductById(id);
-        model.addAttribute("product", p);
-        return "product";
+
+        try {
+            Product p = productService.get(id);
+            model.addAttribute("product", p);
+            return "product";
+        } catch (Exception e) {
+            // 예외 처리 (예: 존재하지 않는 상품 ID)
+            return "redirect:/error";
+        }
     }
+
 }
