@@ -36,4 +36,5 @@ public class ProductImageService {
     public void removeByProductId(int productId) {
         productImageRepository.deleteByProductId(productId);
     }
+
 }

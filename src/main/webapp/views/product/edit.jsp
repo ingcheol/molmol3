@@ -3,50 +3,62 @@
 <html>
 <head>
   <title>상품 수정</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container mt-5">
   <h2>상품 수정</h2>
+
   <form action="/admin/product/edit" method="post" enctype="multipart/form-data">
-    <!-- ID는 수정 불가하므로 hidden 처리 -->
-    <input type="hidden" name="productId" value="${product.productId}"/>
+    <input type="hidden" name="productId" value="${product.productId}">
 
+    <!-- 🔹 상품명 -->
     <div class="mb-3">
-      <label for="productName" class="form-label">상품명</label>
-      <input type="text" class="form-control" id="productName" name="productName" value="${product.productName}" required>
+      <label class="form-label">상품명</label>
+      <input type="text" name="productName" value="${product.productName}" class="form-control" required>
     </div>
 
+    <!-- 🔹 가격 -->
     <div class="mb-3">
-      <label for="productPrice" class="form-label">가격</label>
-      <input type="number" class="form-control" id="productPrice" name="productPrice" value="${product.productPrice}" required>
+      <label class="form-label">가격</label>
+      <input type="number" name="productPrice" value="${product.productPrice}" class="form-control" required>
     </div>
 
+    <!-- 🔹 카테고리 선택 -->
     <div class="mb-3">
-      <label for="cateId" class="form-label">카테고리 ID</label>
-      <input type="text" class="form-control" id="cateId" name="cateId" value="${product.cateId}">
+      <label class="form-label">카테고리</label>
+      <select name="cateId" class="form-select" required>
+        <c:forEach var="cate" items="${categories}">
+          <option value="${cate.cateId}" ${product.cateId == cate.cateId ? 'selected' : ''}>
+              ${cate.cateName}
+          </option>
+        </c:forEach>
+      </select>
+
     </div>
 
-    <!-- 이미지 미리보기 -->
-    <c:if test="${not empty product.images}">
-      <div class="mb-3">
-        <label class="form-label">기존 이미지</label>
-        <div>
-          <c:forEach var="img" items="${product.images}">
-            <img src="${img.productImgUrl}" alt="이미지" width="100" class="me-2 mb-2"/>
-          </c:forEach>
-        </div>
-      </div>
-    </c:if>
-
-    <!-- 이미지 업로드 -->
+    <!-- 🔹 기존 이미지 보여주기 -->
     <div class="mb-3">
-      <label for="imageFile" class="form-label">추가 이미지 업로드</label>
-      <input type="file" class="form-control" id="imageFile" name="imageFile" accept="image/*">
+      <label class="form-label">기존 이미지</label><br>
+      <c:if test="${not empty product.images}">
+        <img src="${product.images[0].productImgUrl}" width="100" height="100" alt="기존 이미지">
+      </c:if>
+      <c:if test="${empty product.images}">
+        <span>이미지 없음</span>
+      </c:if>
     </div>
 
-    <button type="submit" class="btn btn-primary">수정 완료</button>
-    <a href="/admin/product/list" class="btn btn-secondary">목록으로</a>
+    <!-- 🔹 이미지 새로 선택 -->
+    <div class="mb-3">
+      <label class="form-label">이미지 변경 (선택)</label>
+      <input type="file" name="imageFile" class="form-control">
+    </div>
+
+    <!-- 🔹 버튼 -->
+    <div class="d-flex justify-content-between">
+      <a href="/admin/product/list" class="btn btn-secondary">목록으로</a>
+      <button type="submit" class="btn btn-primary">수정 완료</button>
+    </div>
   </form>
 </div>
 </body>
