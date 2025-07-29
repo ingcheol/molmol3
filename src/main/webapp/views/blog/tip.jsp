@@ -86,9 +86,12 @@
             <a class="nav-link dropdown-toggle" href="#" id="dropdownShop" data-bs-toggle="dropdown"
                aria-expanded="false">Shop</a>
             <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownShop">
-              <li><a href="index.html" class="dropdown-item item-anchor">남성 연예인 의상</a></li>
-              <li><a href="index.html" class="dropdown-item item-anchor">여성 연예인 의상</a></li>
-              <li><a href="index.html" class="dropdown-item item-anchor">엑세서리</a></li>
+              <li><a href="/shop/top" class="dropdown-item item-anchor">상의</a></li>
+              <li><a href="/shop/bottom" class="dropdown-item item-anchor">하의</a></li>
+              <li><a href="/shop/hat" class="dropdown-item item-anchor">모자</a></li>
+              <li><a href="/shop/shoes" class="dropdown-item item-anchor">신발</a></li>
+              <li><a href="/shop/bag" class="dropdown-item item-anchor">가방</a></li>
+              <li><a href="/shop/accessory" class="dropdown-item item-anchor">악세사리</a></li>
             </ul>
           </li>
 

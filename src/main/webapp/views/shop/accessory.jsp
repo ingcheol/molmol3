@@ -118,7 +118,6 @@
                             <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
                             <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
                         </ul>
-
                     </li>
 
                     <!-- WISHLIST, CART, LOGIN -->
@@ -141,7 +140,8 @@
 <!-- ✅ 본문 내용 -->
 
 
-<!-- ✅ Bootstrap 기능 작동을 위한 JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ✅ Bootstrap 기능 작동을 위한 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

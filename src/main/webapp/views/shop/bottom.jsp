@@ -118,7 +118,6 @@
                             <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
                             <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
                         </ul>
-
                     </li>
 
                     <!-- WISHLIST, CART, LOGIN -->
@@ -139,6 +138,7 @@
 </nav>
 
 <!-- ✅ 본문 내용 -->
+
 
 
 <!-- ✅ Bootstrap 기능 작동을 위한 JS -->
