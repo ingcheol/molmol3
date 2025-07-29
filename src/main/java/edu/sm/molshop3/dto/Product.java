@@ -27,6 +27,4 @@ public class Product {
     private Timestamp regDate;     // 등록일
     private Timestamp updateDate;  // 수정일
 
-    // 구성품 리스트 (1:N 관계)
-    private List<Item> items;      // 해당 상품의 구성 아이템들
 }
