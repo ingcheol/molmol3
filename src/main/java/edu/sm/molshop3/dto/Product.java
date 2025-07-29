@@ -15,16 +15,17 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class Product {
-    private int productId;         // 상품 ID (PK)
-    private String productName;    // 상품명
-    private int productPrice;      // 가격
-    private String image;          // 이미지 파일명
-    private String description;    // 설명
-    private String cateId;         // 카테고리 ID (FK)
+    private int productId;
+    private String productName;
+    private int productPrice;
+    private String cateId;
+    private String image; // ← 이게 있어야 함
+    private String imageUrl;
 
     // 추가 필드
-    private String cateName;       // 조인을 통해 얻은 카테고리 이름 (뷰 용)
-    private Timestamp regDate;     // 등록일
-    private Timestamp updateDate;  // 수정일
+    private String cateName;                    // 카테고리명
+    private Timestamp regDate;
+    private Timestamp updateDate;
 
+    private List<ProductImage> images;          // 이미지 리스트 (JOIN or 수동 삽입)
 }

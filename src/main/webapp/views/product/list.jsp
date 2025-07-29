@@ -11,7 +11,7 @@
 <body>
 
 <div class="container mt-5">
-  <h2 class="mb-4">📦 상품 목록</h2>
+  <h2 class="mb-4"> 상품 목록</h2>
 
   <table class="table table-bordered align-middle text-center">
     <thead class="table-dark">
@@ -29,7 +29,7 @@
     <c:forEach var="p" items="${products}">
       <tr>
         <td>
-          <img src="/image/${p.image}" alt="${p.productName}" style="width: 100px; height: 100px; object-fit: cover;">
+          <img src="${product.imageUrl}" style="width:100px;" alt="${product.productName}">
         </td>
         <td>${p.productName}</td>
         <td>₩${p.productPrice}</td>

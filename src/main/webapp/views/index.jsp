@@ -340,32 +340,26 @@
 </div>
 
 <!-- 여기부터는 상단 목록들 -->
-    <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
-        <div class="container-fluid">
-            <div class="row justify-content-between align-items-center w-100">
-                <div class="col-auto">
+<nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
+    <div class="container-fluid">
+        <div class="row justify-content-between align-items-center w-100">
+
+            <div class="col-auto">
                 <span class="navbar-brand" style="
-                    font-size: 32px;
-                    font-weight: bold;
-                    background: linear-gradient(90deg, #FF6B6B, #FFA63D);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;">
-                    깔롱드
+                font-size: 32px;
+                font-weight: bold;
+                background: linear-gradient(90deg, #FF6B6B, #FFA63D);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">
+                깔롱드
                 </span>
-                </div>
-
-                <c:if test="${logincust != null && logincust.custId eq 'admin'}">
-                    <div class="col-auto">
-                        <a href="/admin/product/list" class="nav-link fw-bold text-danger" style="font-size: 20px;">🔧 상품관리(Admin)</a>
-                    </div>
-                </c:if>
             </div>
-
             <c:if test="${logincust != null && logincust.custId eq 'admin'}">
                 <div class="col-auto">
-                    <a href="/admin/cust/list" class="nav-link fw-bold text-danger" style="font-size: 20px;">🔧 회원관리(Admin)</a>
+                    <a href="/admin/product/list" class="nav-link fw-bold text-danger" style="font-size: 20px;">상품관리(Admin)</a>
                 </div>
             </c:if>
+
 
             <div class="col-auto">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -387,44 +381,79 @@
                                 <a class="nav-link dropdown-toggle active" href="#" id="dropdownHome" data-bs-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false">Home</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownHome">
-                                    <li><a href="index.html" class="dropdown-item item-anchor">베스트 착장</a></li>
-                                    <li><a href="index.html" class="dropdown-item item-anchor">신상 착장</a></li>
-                                    <li><a href="index.html" class="dropdown-item item-anchor">세트 착장 모음</a></li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">베스트 착장</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">신상 착장</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">세트 착장 모음</a>
+                                    </li>
                                 </ul>
                             </li>
-
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdownShop" data-bs-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false">Shop</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownShop">
-                                    <li><a href="index.html" class="dropdown-item item-anchor">남성 연예인 의상</a></li>
-                                    <li><a href="index.html" class="dropdown-item item-anchor">여성 연예인 의상</a></li>
-                                    <li><a href="index.html" class="dropdown-item item-anchor">엑세서리</a></li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">상의</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">하의</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">아우터</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">가방</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">신발</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">액세서리</a>
+                                    </li>
                                 </ul>
                             </li>
-
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdownBlog" data-bs-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
-                                    <li><a href="/blog/star" class="dropdown-item item-anchor">스타 착용 갤러리</a></li>
-                                    <li><a href="/blog/tip" class="dropdown-item item-anchor">스타일링 팁</a></li>
-                                    <li><a href="/blog/review" class="dropdown-item item-anchor">사용자 후기</a></li>
-                                    <li><a href="/blog/video" class="dropdown-item item-anchor">스타일 영상</a></li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">스타 착용 갤러리</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">스탕일링 팁</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">사용자 후기</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">스타일 영상</a>
+                                    </li>
                                 </ul>
                             </li>
-
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
-                                    <li><a href="/pages/information" class="dropdown-item item-anchor">내 정보</a></li>
-                                    <li><a href="/wishlist" class="dropdown-item item-anchor">찜 목록</a></li>
-                                    <li><a href="/cart" class="dropdown-item item-anchor">장바구니</a></li>
-                                    <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
-                                    <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">내 정보</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">찜 목록</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">장바구니</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">주문 내역</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="dropdown-item item-anchor">리뷰 작성</a>
+                                    </li>
                                 </ul>
-
                             </li>
 
                             <!-- 상단 목록 로그인, 카트, 위시 리스트 -->
@@ -446,9 +475,9 @@
                                     <c:choose>
                                         <c:when test="${not empty logincust}">
                                             <li class="d-inline-block">
-                                            <span class="nav-login d-flex align-items-center text-uppercase mx-3 fw-bold" style="font-size: 20px;">
-                                                ${logincust.custName} 님
-                                            </span>
+            <span class="nav-login d-flex align-items-center text-uppercase mx-3 fw-bold" style="font-size: 20px;">
+                ${logincust.custName} 님
+            </span>
                                             </li>
                                             <li class="d-inline-block">
                                                 <a href="/logout" class="nav-login d-flex align-items-center text-uppercase mx-3 fw-bold"
@@ -466,15 +495,17 @@
                                             </li>
                                         </c:otherwise>
                                     </c:choose>
+
                                 </ul>
                             </div>
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </nav>
-
+    </div>
+</nav>
 
 <section id="billboard" class="bg-light py-5">
     <div class="container">
