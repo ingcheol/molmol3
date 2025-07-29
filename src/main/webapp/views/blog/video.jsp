@@ -96,11 +96,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownBlog" data-bs-toggle="dropdown"
                            aria-expanded="false">Blog</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownBlog">
-                            <li><a class="dropdown-item" href="/blog/star">스타 착용 갤러리</a></li>
-                            <li><a class="dropdown-item" href="/blog/tip">스타일링 팁</a></li>
-                            <li><a class="dropdown-item" href="/blog/review">사용자 후기</a></li>
-                            <li><a class="dropdown-item" href="/blog/video">스타일 영상</a></li>
+                        <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
+                            <li><a href="/blog/star" class="dropdown-item item-anchor">스타 INSTAGRAM</a></li>
+                            <li><a href="/blog/tip" class="dropdown-item item-anchor">스타일링 팁</a></li>
+                            <li><a href="/blog/review" class="dropdown-item item-anchor">사용자 후기</a></li>
+                            <li><a href="/blog/video" class="dropdown-item item-anchor">스타일 영상</a></li>
                         </ul>
                     </li>
 
@@ -108,12 +108,12 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
                            aria-expanded="false">Pages</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownPages">
-                            <li><a class="dropdown-item" href="/mypage">내 정보</a></li>
-                            <li><a class="dropdown-item" href="/wishlist">찜 목록</a></li>
-                            <li><a class="dropdown-item" href="/cart">장바구니</a></li>
-                            <li><a class="dropdown-item" href="/orders">주문 내역</a></li>
-                            <li><a class="dropdown-item" href="/review/write">리뷰 작성</a></li>
+                        <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
+                            <li><a href="/pages/information" class="dropdown-item item-anchor">내 정보</a></li>
+                            <li><a href="/wishlist" class="dropdown-item item-anchor">찜 목록</a></li>
+                            <li><a href="/cart" class="dropdown-item item-anchor">장바구니</a></li>
+                            <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
+                            <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
                         </ul>
                     </li>
 
@@ -137,6 +137,10 @@
 
 
 <!-- ✅ 본문 내용 -->
+<div class="mb-3 d-flex justify-content-between">
+    <div>
+        <a href="/" class="btn btn-secondary">홈으로</a>
+    </div>
 <div class="container mt-5">
     <h2 class="text-center fw-bold mb-4" style="letter-spacing: 1px;">스타일 영상</h2>
     <p class="text-center text-muted mb-5">연예인들의 착장과 스타일링 노하우를 영상으로 만나보세요.</p>
@@ -145,7 +149,7 @@
         <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
                 <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/E2wMDEiC3QY" title="Karina 공항패션" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/j6alFPmYx50" title="카리나 공항룩" allowfullscreen></iframe>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title fw-semibold">카리나 공항룩</h5>
@@ -157,11 +161,11 @@
         <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
                 <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/rLoWMU4L_qE" title="아이돌 데일리룩 룩북" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/QNIMDJztzng" title="여름 데일리룩 추천" allowfullscreen></iframe>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title fw-semibold">아이돌 데일리룩 룩북</h5>
-                    <p class="card-text">아이돌의 실제 일상 데일리룩 모음! 스타일 연출법 참고해요.</p>
+                    <h5 class="card-title fw-semibold">겨울 데일리룩 추천</h5>
+                    <p class="card-text">추운 겨울 원영 스타일을 연출할 수 있는 데일리룩 모음집.</p>
                 </div>
             </div>
         </div>
@@ -169,16 +173,90 @@
         <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
                 <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/zs1wH0YkJdQ" title="스타일링 튜토리얼" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/_aB_h8rjjbI" title="남친룩 스타일링" allowfullscreen></iframe>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title fw-semibold">스타일링 튜토리얼</h5>
-                    <p class="card-text">같은 아이템으로 다른 분위기 연출하는 팁! 실전 스타일링 가이드.</p>
+                    <h5 class="card-title fw-semibold">여친룩 스타일링</h5>
+                    <p class="card-text">댄디하면서도 편안한 데이트룩! 센스 있는 여친룩 가이드.</p>
                 </div>
             </div>
         </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/Hpd3upaXfLY" title="아이돌 공항패션 모음" allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">윈터 공항룩</h5>
+                    <p class="card-text">트렌디한 윈터의 공항패션을 살펴보세요.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/JHooZ1usVT0" title="셀럽 하객룩 모음" allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">아이브 공항룩</h5>
+                    <p class="card-text">아이브의 다양한 패션을 한눈에 살펴보세요.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/a-64RpGgqJQ" title="청청패션 입는 법" allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">엔믹스 공항룩</h5>
+                    <p class="card-text">부담스럽지 않게 스타일을 아는 엔믹스 친구들의 패션.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/eK8RmYyxWek" title="아이돌 사복 패션 탐방" allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">아이돌 사복 패션 탐방</h5>
+                    <p class="card-text">무대 밖에서 빛나는 아이돌들의 리얼 사복 스타일링.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/B1BOWjFRrZc" title="OOTD 브이로그" allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">블랙핑크 공항룩</h5>
+                    <p class="card-text">월드 스타 블랙핑크의 의상을 한눈에 보아요.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/jc9VmLaxtUs" title="셔츠 스타일링 꿀팁" allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">연예인을 꿈꾸는 청년</h5>
+                    <p class="card-text">지금부터가 시작! 연예인이 되기위한 노력 영상.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+
 
 
 <!-- ✅ Bootstrap 기능 작동을 위한 JS -->

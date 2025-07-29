@@ -274,9 +274,10 @@
 
 <!-- 검색 폼과 랭킹 박스를 감싸는 래퍼 -->
 <div class="search-wrapper" style="position: relative;">
-    <form role="search" method="get" class="form-group" action="">
-        <input type="search" id="searchInput" class="form-control border-0 border-bottom"
-               placeholder="Type and press enter" value="" name="s" />
+    <form role="search" method="get" class="form-group" action="/search">
+        <input type="search" id="searchInput" name="s"
+               class="form-control border-0 border-bottom"
+               placeholder="Type and press enter" />
         <button type="submit" class="search-submit border-0 position-absolute bg-white"
                 style="top: 6px; right: 10px;">
             <svg class="search" width="24" height="24">
@@ -407,7 +408,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdownBlog" data-bs-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
-                                    <li><a href="/blog/star" class="dropdown-item item-anchor">스타 착용 갤러리</a></li>
+                                    <li><a href="/blog/star" class="dropdown-item item-anchor">스타 INSTAGRAM</a></li>
                                     <li><a href="/blog/tip" class="dropdown-item item-anchor">스타일링 팁</a></li>
                                     <li><a href="/blog/review" class="dropdown-item item-anchor">사용자 후기</a></li>
                                     <li><a href="/blog/video" class="dropdown-item item-anchor">스타일 영상</a></li>
@@ -431,36 +432,32 @@
                             <div class="col-3 col-lg-auto">
                                 <ul class="list-unstyled d-flex m-0 align-items-center">
                                     <li class="nav-link">
-                                        <a href="index.html" class="d-flex align-items-center text-uppercase mx-1"
-                                           style="font-size: 20px; line-height: 1;">
+                                        <a href="index.html" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
                                             WISHLIST <span class="wishlist-count ms-1">(0)</span>
                                         </a>
                                     </li>
-                                    <li class="d-inline-block">
-                                        <a href="index.html" class="d-flex align-items-center text-uppercase mx-2" data-bs-toggle="offcanvas"
-                                           data-bs-target="#offcanvasCart" aria-controls="offcanvasCart"
-                                           style="font-size: 20px; line-height: 1;">
+                                    <li class="nav-link">
+                                        <a href="index.html" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1"
+                                           data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
                                             CART <span class="cart-count ms-1">(0)</span>
                                         </a>
                                     </li>
                                     <c:choose>
                                         <c:when test="${not empty logincust}">
-                                            <li class="d-inline-block">
-                                            <span class="nav-login d-flex align-items-center text-uppercase mx-3 fw-bold" style="font-size: 20px;">
-                                                ${logincust.custName} 님
-                                            </span>
+                                            <li class="nav-link">
+                    <span class="btn btn-light text-uppercase mx-1 px-3 py-1">
+                        ${logincust.custName} 님
+                    </span>
                                             </li>
-                                            <li class="d-inline-block">
-                                                <a href="/logout" class="nav-login d-flex align-items-center text-uppercase mx-3 fw-bold"
-                                                   style="font-size: 20px; line-height: 1;">
+                                            <li class="nav-link">
+                                                <a href="/logout" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
                                                     LOGOUT
                                                 </a>
                                             </li>
                                         </c:when>
                                         <c:otherwise>
-                                            <li class="d-inline-block">
-                                                <a href="/login" class="nav-login d-flex align-items-center text-uppercase mx-3 fw-bold"
-                                                   style="font-size: 20px; line-height: 1;">
+                                            <li class="nav-link">
+                                                <a href="/login" class="btn btn-dark text-uppercase mx-1 px-3 py-1">
                                                     LOGIN
                                                 </a>
                                             </li>
@@ -497,12 +494,10 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="/product?id=karina8" class="item-anchor">카리나 공항 패션</a>
+                                    <a href="/product?id=karina8" class="item-anchor">슬기 캐주얼룩</a>
                                 </h5>
-                                <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                <div class="btn-left">
-                                    <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                </div>
+                                <p>꾸안꾸의 정석!<br/>
+                                    스트라이프 티셔츠로 완성한 데일리 스타일링</p>
                             </div>
                         </div>
                     </div>
@@ -517,10 +512,11 @@
                                 <h5 class="element-title text-uppercase">
                                     <a href="/product?id=karina1" class="item-anchor">카리나 공항 패션</a>
                                 </h5>
-                                <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                <div class="btn-left">
-                                    <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                </div>
+                                <p>
+                                    실물 느낌 그대로,<br/>
+                                    지금 바로 카리나 착용 아이템 GET!
+                                </p>
+
                             </div>
                         </div>
                     </div>
@@ -533,12 +529,10 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="/product?id=karina2" class="item-anchor">카리나 공항 패션</a>
+                                    <a href="/product?id=karina2" class="item-anchor">윈터 블랙 드레스룩</a>
                                 </h5>
-                                <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                <div class="btn-left">
-                                    <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                </div>
+                                <p>실루엣이 돋보이는 블랙 드레스로<br/>
+                                    레드카펫 위 여신 미모 완성!</p>
                             </div>
                         </div>
                     </div>
@@ -551,12 +545,10 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="/product?id=karina3" class="item-anchor">카리나 공항 패션</a>
+                                    <a href="/product?id=karina3" class="item-anchor">카리나 블랙 캐주얼 공항패션</a>
                                 </h5>
-                                <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                <div class="btn-left">
-                                    <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                </div>
+                                <p>올블랙으로 완성한 시크한 매력!<br/>
+                                    꾸안꾸의 정석, 스타일과 편안함을 동시에</p>
                             </div>
                         </div>
                     </div>
@@ -569,12 +561,9 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="/product?id=karina4" class="item-anchor">카리나 공항 패션</a>
+                                    <a href="/product?id=karina4" class="item-anchor">슬기 무대 의상 스타일링</a>
                                 </h5>
-                                <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                <div class="btn-left">
-                                    <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                </div>
+                                <p>무대 위에서 빛나는 실버 & 블랙 조합<br/>독보적인 존재감, 무대 패션 끝판왕!</p>
                             </div>
                         </div>
                     </div>
@@ -587,12 +576,10 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="/product?id=karina5" class="item-anchor">카리나 공항 패션</a>
+                                    <a href="/product?id=karina5" class="item-anchor">윈터 시크 스트릿 무드</a>
                                 </h5>
-                                <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                <div class="btn-left">
-                                    <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                </div>
+                                <p>시선 강탈, 쿨한 무드 그대로<br/>
+                                    도심 위 힙한 스트릿 감성 완성!</p>
                             </div>
                         </div>
                     </div>
@@ -605,12 +592,10 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="/product?id=karina6" class="item-anchor">카리나 공항 패션</a>
+                                    <a href="/product?id=karina6" class="item-anchor">슬기 세이렌 무드</a>
                                 </h5>
-                                <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                <div class="btn-left">
-                                    <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                </div>
+                                <p>몽환적인 무드 속 우아한 실루엣<br/>
+                                    슬기만의 고요하고 깊은 분위기를 입다</p>
                             </div>
                         </div>
                     </div>
@@ -623,12 +608,10 @@
                             </div>
                             <div class="banner-content py-4">
                                 <h5 class="element-title text-uppercase">
-                                    <a href="/product?id=karina7" class="item-anchor">카리나 공항 패션</a>
+                                    <a href="/product?id=karina7" class="item-anchor">윈터 트렌디 스트릿룩</a>
                                 </h5>
-                                <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                <div class="btn-left">
-                                    <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                </div>
+                                <p>도심을 찢는 강렬한 아우라<br/>
+                                    유행을 선도하는 힙한 블랙핏을 지금 바로 만나보세요</p>
                             </div>
                         </div>
                     </div>

@@ -96,11 +96,11 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdownBlog" data-bs-toggle="dropdown"
                aria-expanded="false">Blog</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownBlog">
-              <li><a class="dropdown-item" href="/blog/star">스타 착용 갤러리</a></li>
-              <li><a class="dropdown-item" href="/blog/tip">스타일링 팁</a></li>
-              <li><a class="dropdown-item" href="/blog/review">사용자 후기</a></li>
-              <li><a class="dropdown-item" href="/blog/video">스타일 영상</a></li>
+            <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
+              <li><a href="/blog/star" class="dropdown-item item-anchor">스타 INSTAGRAM</a></li>
+              <li><a href="/blog/tip" class="dropdown-item item-anchor">스타일링 팁</a></li>
+              <li><a href="/blog/review" class="dropdown-item item-anchor">사용자 후기</a></li>
+              <li><a href="/blog/video" class="dropdown-item item-anchor">스타일 영상</a></li>
             </ul>
           </li>
 
@@ -108,12 +108,12 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
                aria-expanded="false">Pages</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownPages">
-              <li><a class="dropdown-item" href="/mypage">내 정보</a></li>
-              <li><a class="dropdown-item" href="/wishlist">찜 목록</a></li>
-              <li><a class="dropdown-item" href="/cart">장바구니</a></li>
-              <li><a class="dropdown-item" href="/orders">주문 내역</a></li>
-              <li><a class="dropdown-item" href="/review/write">리뷰 작성</a></li>
+            <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
+              <li><a href="/pages/information" class="dropdown-item item-anchor">내 정보</a></li>
+              <li><a href="/wishlist" class="dropdown-item item-anchor">찜 목록</a></li>
+              <li><a href="/cart" class="dropdown-item item-anchor">장바구니</a></li>
+              <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
+              <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
             </ul>
           </li>
 
@@ -135,94 +135,124 @@
 </nav>
 
 <!-- ✅ 본문 내용 -->
+<div class="mb-3 d-flex justify-content-between">
+  <div>
+    <a href="/" class="btn btn-secondary">홈으로</a>
+  </div>
 <div class="container text-center mt-5">
-  <h2>스타 착용 갤러리</h2>
-  <p>방송, 공항, SNS 속 연예인 착장을 한눈에 확인해보세요!</p>
+  <h2>스타 INSTAGRAM</h2>
+  <p>방송, 공항, SNS 속 연예인 착장을 인스타로 한눈에 확인해보세요!</p>
+  <p>이미지를 클릭하세요!</p>
 
   <div class="row mt-4">
+
+    <!-- 1. 카리나 -->
     <div class="col-md-4">
       <div class="card">
-        <img src="/image/banner-image-1.jpg" class="card-img-top" alt="아이유 가방">
+        <a href="https://www.instagram.com/katarinabluu/" target="_blank">
+          <img src="/image/banner-image-1.jpg" class="card-img-top" alt="카리나">
+        </a>
         <div class="card-body">
           <h5 class="card-title">카리나</h5>
-          <p class="card-text">꾸안꾸 느낌 강조, 가방은 깔끔한 포인트</p>
         </div>
       </div>
     </div>
 
+    <!-- 2. 윈터 -->
     <div class="col-md-4">
       <div class="card">
-        <img src="/image/banner-image-2.jpg" class="card-img-top" alt="장원영 드레스">
+        <a href="https://www.instagram.com/imwinter/" target="_blank">
+          <img src="/image/banner-image-2.jpg" class="card-img-top" alt="윈터">
+        </a>
         <div class="card-body">
           <h5 class="card-title">윈터</h5>
-          <p class="card-text">몸매 라인 강조 + 우아한 분위기</p>
         </div>
       </div>
     </div>
 
+    <!-- 3. 슬기 -->
     <div class="col-md-4">
       <div class="card">
-        <img src="/image/banner-image-3.jpg" class="card-img-top" alt="카리나 공항패션">
-        <div class="card-body">
-          <h5 class="card-title">카리나</h5>
-          <p class="card-text">시크한 블랙톤 + Y2K 느낌의 비니 착장</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card">
-        <img src="/image/banner-image-4.jpg" class="card-img-top" alt="카리나 공항패션">
+        <a href="https://www.instagram.com/hi_sseulgi/" target="_blank">
+          <img src="/image/banner-image-4.jpg" class="card-img-top" alt="슬기">
+        </a>
         <div class="card-body">
           <h5 class="card-title">슬기</h5>
-          <p class="card-text">무대에서 돋보이는 시크+섹시한 레이어드 스타일</p>
         </div>
       </div>
     </div>
 
+    <!-- 4. 지우 -->
     <div class="col-md-4">
       <div class="card">
-        <img src="/image/banner-image-5.jpg" class="card-img-top" alt="카리나 공항패션">
-        <div class="card-body">
-          <h5 class="card-title">윈터</h5>
-          <p class="card-text">힙한 무드 가득한 Y2K 스트릿 감성</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card">
-        <img src="/image/banner-image-6.jpg" class="card-img-top" alt="카리나 공항패션">
+        <a href="https://www.instagram.com/jiwoo_nmixx/" target="_blank">
+          <img src="/image/banner-image-6.jpg" class="card-img-top" alt="지우">
+        </a>
         <div class="card-body">
           <h5 class="card-title">지우</h5>
-          <p class="card-text">하이힐과 매치한 고급스러운 무드의 룸웨어 스타일</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 아이유 -->
+    <div class="col-md-4">
+      <div class="card">
+        <a href="https://www.instagram.com/dlwlrma/" target="_blank">
+          <img src="/image/banner-image-9.jpg" class="card-img-top" alt="아이유">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">아이유</h5>
         </div>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="card">
-        <img src="/image/banner-image-7.jpg" class="card-img-top" alt="카리나 공항패션">
+        <a href="https://www.instagram.com/for_everyoung10/" target="_blank">
+          <img src="/image/banner-image-10.jpg" class="card-img-top" alt="장원영">
+        </a>
         <div class="card-body">
-          <h5 class="card-title">윈터</h5>
-          <p class="card-text">강렬한 태양 아래, 시크함이 돋보이는 하이패션 무드</p>
+          <h5 class="card-title">장원영</h5>
         </div>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="card">
-        <img src="/image/banner-image-8.jpg" class="card-img-top" alt="카리나 공항패션">
+        <a href="https://www.instagram.com/reinyourheart/" target="_blank">
+          <img src="/image/banner-image-11.jpg" class="card-img-top" alt="레이">
+        </a>
         <div class="card-body">
-          <h5 class="card-title">슬기</h5>
-          <p class="card-text">청량한 블루톤으로 완성한 데일리 스쿨걸 스타일</p>
+          <h5 class="card-title">레이</h5>
         </div>
       </div>
     </div>
 
+    <div class="col-md-4">
+      <div class="card">
+        <a href="https://www.instagram.com/igotyuandme/" target="_blank">
+          <img src="/image/banner-image-12.jpg" class="card-img-top" alt="유나">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">유나</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <a href="https://www.instagram.com/chaengrang_/" target="_blank">
+          <img src="/image/banner-image-13.jpg" class="card-img-top" alt="이채영">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">이채영</h5>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
+
 
 <!-- ✅ Bootstrap 기능 작동을 위한 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
