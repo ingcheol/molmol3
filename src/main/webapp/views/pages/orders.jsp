@@ -108,13 +108,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
                            aria-expanded="false">Pages</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownPages">
-                            <li><a class="dropdown-item" href="/mypage">내 정보</a></li>
-                            <li><a class="dropdown-item" href="/wishlist">찜 목록</a></li>
-                            <li><a class="dropdown-item" href="/cart">장바구니</a></li>
-                            <li><a class="dropdown-item" href="/orders">주문 내역</a></li>
-                            <li><a class="dropdown-item" href="/review/write">리뷰 작성</a></li>
+                        <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
+                            <li><a href="/pages/information" class="dropdown-item item-anchor">내 정보</a></li>
+                            <li><a href="/wishlist" class="dropdown-item item-anchor">찜 목록</a></li>
+                            <li><a href="/cart" class="dropdown-item item-anchor">장바구니</a></li>
+                            <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
+                            <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
                         </ul>
+
                     </li>
 
                     <!-- WISHLIST, CART, LOGIN -->
