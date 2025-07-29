@@ -9,16 +9,53 @@
       font-family: sans-serif;
       background-color: #f5f5f5;
     }
+
     .form-field {
       width: 100%;
       padding: 10px;
       margin-bottom: 10px;
       border: 1px solid #ccc;
     }
+
     .error-msg {
       color: red;
       margin-bottom: 10px;
       font-size: 14px;
+    }
+
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-box {
+      background-color: white;
+      width: 500px;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -38,8 +75,6 @@
     <div style="display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
       <label><input type="checkbox" name="remember"/> 아이디 저장</label>
       <div>
-        <a href="#" onclick="openModal('findId')" style="margin-right: 10px;">아이디 찾기</a>
-        <a href="#" onclick="openModal('resetPwd')" style="margin-right: 10px;">비밀번호 재설정</a>
         <a href="#" onclick="openModal('signup')">회원가입</a>
       </div>
     </div>
@@ -51,8 +86,8 @@
   </form>
 </div>
 
-<!-- 모달 -->
-<div id="popupModal" class="modal-backdrop" style="display: none;">
+<!-- 회원가입 모달 -->
+<div id="popupModal" class="modal-backdrop">
   <div class="modal-box">
     <span class="close-btn" onclick="closeModal()">&times;</span>
     <div id="modalContent"></div>
@@ -63,38 +98,24 @@
   function openModal(type) {
     const modal = document.getElementById("popupModal");
     const content = document.getElementById("modalContent");
-    let html = "";
 
     if (type === 'signup') {
-      html = `
-        <div class="modal-title">회원가입</div>
-        <input type='text' class='form-field' placeholder='아이디'/>
-        <input type='password' class='form-field' placeholder='비밀번호'/>
-        <input type='text' class='form-field' placeholder='이름'/>
-        <div style='text-align: right; margin-top: 15px;'>
-          <button onclick='closeModal()'>가입 완료</button>
-        </div>
+      content.innerHTML = `
+        <form action="/registerimpl" method="post">
+          <div class="modal-title">회원가입</div>
+          <input name="custId" class="form-field" placeholder="아이디" required />
+          <input name="custPwd" type="password" class="form-field" placeholder="비밀번호" required />
+          <input name="custName" class="form-field" placeholder="이름" required />
+          <input name="custPhone" class="form-field" placeholder="전화번호" required />
+          <input name="custEmail" type="email" class="form-field" placeholder="이메일" required />
+          <input name="address" class="form-field" placeholder="주소" required />
+          <div style="text-align: right; margin-top: 15px;">
+            <button type="submit">가입 완료</button>
+          </div>
+        </form>
       `;
-    } else if (type === 'findId') {
-      html = `
-        <div class="modal-title">아이디 찾기</div>
-        <input type='text' class='form-field' placeholder='이메일'/>
-        <div style='text-align: right; margin-top: 15px;'>
-          <button onclick='closeModal()'>확인</button>
-        </div>
-      `;
-    } else if (type === 'resetPwd') {
-      html = `
-        <div class="modal-title">비밀번호 재설정</div>
-        <input type='text' class='form-field' placeholder='아이디'/>
-        <div style='text-align: right; margin-top: 15px;'>
-          <button onclick='closeModal()'>확인</button>
-        </div>
-      `;
+      modal.style.display = "flex";
     }
-
-    content.innerHTML = html;
-    modal.style.display = "flex";
   }
 
   function closeModal() {

@@ -354,7 +354,11 @@
                 깔롱드
                 </span>
             </div>
-
+            <c:if test="${logincust != null && logincust.custId eq 'admin'}">
+                <div class="col-auto">
+                    <a href="/admin/product/list" class="nav-link fw-bold text-danger" style="font-size: 20px;">🔧 상품관리(Admin)</a>
+                </div>
+            </c:if>
 
 
             <div class="col-auto">
@@ -1165,10 +1169,9 @@
             }
         });
     });
+
+
 </script>
-
-
-
 
 
 </div>

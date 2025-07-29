@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.sm.molshop3.repository.ProductRepository">
+
+    <resultMap id="ProductMap" type="Product">
+        <id property="productId" column="product_id"/>
+        <result property="productName" column="product_name"/>
+        <result property="productPrice" column="product_price"/>
+        <result property="cateId" column="cate_id"/>
+        <result property="regDate" column="reg_date"/>
+        <result property="updateDate" column="update_date"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="ProductMap">
+        SELECT * FROM product
+    </select>
+
+    <select id="select" parameterType="int" resultMap="ProductMap">
+        SELECT * FROM product WHERE product_id = #{productId}
+    </select>
+
+    <insert id="insert" parameterType="Product" useGeneratedKeys="true" keyProperty="productId">
+        INSERT INTO product (product_name, product_price, cate_id)
+        VALUES (#{productName}, #{productPrice}, #{cateId})
+    </insert>
+
+    <update id="update" parameterType="Product">
+        UPDATE product
+        SET product_name = #{productName},
+            product_price = #{productPrice},
+            cate_id = #{cateId},
+            update_date = CURRENT_TIMESTAMP
+        WHERE product_id = #{productId}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM product WHERE product_id = #{productId}
+    </delete>
+
+</mapper>

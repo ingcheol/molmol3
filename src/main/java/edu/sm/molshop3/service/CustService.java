@@ -1,13 +1,10 @@
 package edu.sm.molshop3.service;
 
-import edu.sm.molshop3.service.CustService;
 import edu.sm.molshop3.dto.Cust;
 import edu.sm.molshop3.frame.SmService;
 import edu.sm.molshop3.repository.CustRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
-
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -22,7 +19,6 @@ public class CustService implements SmService<Cust, String> {
         return custRepository.select(id);
     }
 
-
     @Override
     public void register(Cust cust) throws Exception {
         custRepository.insert(cust);
@@ -34,13 +30,12 @@ public class CustService implements SmService<Cust, String> {
     }
 
     @Override
-    public void remove(String s) throws Exception {
-        custRepository.delete(s);
+    public void remove(String id) throws Exception {
+        custRepository.delete(id);
     }
 
     @Override
     public List<Cust> get() throws Exception {
         return custRepository.selectAll();
     }
-
 }

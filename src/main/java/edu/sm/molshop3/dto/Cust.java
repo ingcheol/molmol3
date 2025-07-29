@@ -1,20 +1,19 @@
 package edu.sm.molshop3.dto;
 
 import lombok.*;
-import java.sql.Timestamp;
+import java.util.Date;
 
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-@ToString
-@Getter
-@Setter
+@AllArgsConstructor
 @Builder
 public class Cust {
-    private String custPhone;
     private String custId;
-    private String custPwd;
     private String custName;
+    private String custPwd;
     private String address;
-    private Timestamp custRegdate;
-    private Timestamp custUpdate;
+    private String custPhone;
+    private String custEmail;       // 병합 추가
+    private Date custRegdate;
+    private Date custUpdate;
 }
