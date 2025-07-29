@@ -21,13 +21,12 @@ public class ProductController {
         }
 
         try {
-            Product p = productService.get(id);
+            Product p = productService.getWithImages(id); // ✅ 이미지 포함 조회로 변경
             model.addAttribute("product", p);
-            return "product";
+            return "product"; // → /WEB-INF/views/product.jsp
         } catch (Exception e) {
-            // 예외 처리 (예: 존재하지 않는 상품 ID)
+            e.printStackTrace(); // 디버깅용 로그 출력
             return "redirect:/error";
         }
     }
-
 }

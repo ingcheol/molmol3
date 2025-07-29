@@ -26,4 +26,7 @@ public class Product {
     private String cateName;       // 조인을 통해 얻은 카테고리 이름 (뷰 용)
     private Timestamp regDate;     // 등록일
     private Timestamp updateDate;  // 수정일
+
+    // 구성품 리스트 (1:N 관계)
+    private List<Item> items;      // 해당 상품의 구성 아이템들
 }

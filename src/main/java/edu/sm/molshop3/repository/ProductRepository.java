@@ -14,4 +14,8 @@ public interface ProductRepository {
     void delete(int productId);
     Product select(int productId);
     List<Product> selectAll();
+
+    // 이미지 포함된 확장 쿼리
+    Product selectWithImages(int productId);
+    List<Product> selectAllWithImages();
 }

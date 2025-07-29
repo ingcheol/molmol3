@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -28,66 +29,53 @@
     .option-select {
       margin-top: 10px;
     }
+    .thumbnail-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .thumbnail-img:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
 <div class="container py-5">
-  <div class="row">
-    <!-- 좌측 이미지 -->
-    <div class="col-md-6 text-center">
-      <img src="/image/${product.image}" alt="${product.title}" class="product-img shadow">
-    </div>
+<div class="row">
+<!-- 좌측 이미지 -->
+<div class="col-md-6 text-center">
+  <c:choose>
+    <c:when test="${not empty product.images}">
+      <!-- 대표 이미지 (첫 번째) -->
+      <img src="/image/pdimage/${product.images[0].productImgUrl}" alt="${product.productName}" class="product-img shadow mb-3"/>
 
-    <!-- 우측 상품 선택 영역 -->
-    <div class="col-md-6">
-      <h3 class="mb-3">${product.title}</h3>
-      <p class="text-muted mb-4">${product.description}</p>
-
-      <!-- 체크박스 리스트 -->
-      <c:forEach var="item" items="${product.items}">
-        <div class="item-check form-check">
-          <input class="form-check-input" type="checkbox" id="${item.id}">
-          <label class="form-check-label" for="${item.id}">
-            <strong>${item.name}</strong><br>
-            <small>${item.desc}</small><br>
-            <span class="price">₩${item.price}</span>
-          </label>
-
-          <!-- 개별 옵션 -->
-          <div class="option-select">
-            <div class="row">
-              <div class="col-6">
-                <select class="form-select">
-                  <option selected>컬러</option>
-                  <option>아이보리</option>
-                  <option>블랙</option>
-                  <option>네이비</option>
-                </select>
-              </div>
-              <div class="col-6">
-                <select class="form-select">
-                  <option selected>사이즈</option>
-                  <option>S</option>
-                  <option>M</option>
-                  <option>L</option>
-                  <option>XL</option>
-                  <option>XXL</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </c:forEach>
-
-      <!-- 하단 버튼 -->
-      <div class="mt-4 btn-group d-flex justify-content-between">
-        <a href="/" class="btn btn-outline-primary">메인으로</a>
-        <button class="btn btn-outline-dark">❤️</button>
-        <button class="btn btn-outline-secondary">장바구니</button>
-        <button class="btn btn-dark">구매하기</button>
+      <!-- 썸네일 리스트 -->
+      <div class="d-flex justify-content-center gap-2 flex-wrap">
+        <c:forEach var="img" items="${product.images}">
+          <img src="/image/pdimage/${img.productImgUrl}" alt="썸네일"
+               class="thumbnail-img"/>
+        </c:forEach>
       </div>
-    </div>
-  </div>
+    </c:when>
+    <c:otherwise>
+      <img src="/image/default.jpg" alt="No Image" class="product-img shadow"/>
+    </c:otherwise>
+  </c:choose>
 </div>
-</body>
-</html>
+
+<!-- 우측 상품 선택 영역 -->
+<div class="col-md-6">
+<h3 class="mb-3">${product.title}</h3>
+<p class="text-muted mb-4">${product.description}</p>
+
+<!-- 체크박스 구성품 -->
+<c:forEach var="item" items="${product.items}">
+  <div class="item-check form-check">
+  <input class="form-check-input" type="checkbox" id="${item.id}">
+  <label class="form-check-label" for="${item.id}">
+  <strong>${item.name}</strong><br>
+  <small>${item.desc}</small><br>
+  <span
