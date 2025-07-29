@@ -96,11 +96,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownBlog" data-bs-toggle="dropdown"
                            aria-expanded="false">Blog</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownBlog">
-                            <li><a class="dropdown-item" href="/blog/star">스타 착용 갤러리</a></li>
-                            <li><a class="dropdown-item" href="/blog/tip">스타일링 팁</a></li>
-                            <li><a class="dropdown-item" href="/blog/review">사용자 후기</a></li>
-                            <li><a class="dropdown-item" href="/blog/video">스타일 영상</a></li>
+                        <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
+                            <li><a href="/blog/star" class="dropdown-item item-anchor">스타 INSTAGRAM</a></li>
+                            <li><a href="/blog/tip" class="dropdown-item item-anchor">스타일링 팁</a></li>
+                            <li><a href="/blog/review" class="dropdown-item item-anchor">사용자 후기</a></li>
+                            <li><a href="/blog/video" class="dropdown-item item-anchor">스타일 영상</a></li>
                         </ul>
                     </li>
 

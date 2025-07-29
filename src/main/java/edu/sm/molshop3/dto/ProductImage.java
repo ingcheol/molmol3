@@ -11,8 +11,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class ProductImage {
-    private int productImgId;       // 이미지 PK
-    private String productImgUrl;   // 이미지 파일명 또는 경로
-    private int productId;          // 상품 ID (FK)
+public class Item {
+    private String id;     // 구성품 ID
+    private String name;   // 구성품 이름
+    private String desc;   // 구성품 설명
+    private int price;     // 구성품 가격
 }

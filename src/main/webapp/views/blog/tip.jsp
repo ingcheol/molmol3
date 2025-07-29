@@ -96,11 +96,11 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdownBlog" data-bs-toggle="dropdown"
                aria-expanded="false">Blog</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownBlog">
-              <li><a class="dropdown-item" href="/blog/star">스타 착용 갤러리</a></li>
-              <li><a class="dropdown-item" href="/blog/tip">스타일링 팁</a></li>
-              <li><a class="dropdown-item" href="/blog/review">사용자 후기</a></li>
-              <li><a class="dropdown-item" href="/blog/video">스타일 영상</a></li>
+            <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
+              <li><a href="/blog/star" class="dropdown-item item-anchor">스타 INSTAGRAM</a></li>
+              <li><a href="/blog/tip" class="dropdown-item item-anchor">스타일링 팁</a></li>
+              <li><a href="/blog/review" class="dropdown-item item-anchor">사용자 후기</a></li>
+              <li><a href="/blog/video" class="dropdown-item item-anchor">스타일 영상</a></li>
             </ul>
           </li>
 
@@ -108,12 +108,12 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
                aria-expanded="false">Pages</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownPages">
-              <li><a class="dropdown-item" href="/mypage">내 정보</a></li>
-              <li><a class="dropdown-item" href="/wishlist">찜 목록</a></li>
-              <li><a class="dropdown-item" href="/cart">장바구니</a></li>
-              <li><a class="dropdown-item" href="/orders">주문 내역</a></li>
-              <li><a class="dropdown-item" href="/review/write">리뷰 작성</a></li>
+            <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
+              <li><a href="/pages/information" class="dropdown-item item-anchor">내 정보</a></li>
+              <li><a href="/wishlist" class="dropdown-item item-anchor">찜 목록</a></li>
+              <li><a href="/cart" class="dropdown-item item-anchor">장바구니</a></li>
+              <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
+              <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
             </ul>
           </li>
 
@@ -136,6 +136,10 @@
 
 
 <!-- ✅ 본문 내용 -->
+<div class="mb-3 d-flex justify-content-between">
+  <div>
+    <a href="/" class="btn btn-secondary">홈으로</a>
+  </div>
 <div class="container mt-5">
   <h2 class="text-center fw-bold mb-4" style="letter-spacing: 1px;">스타일링 팁</h2>
   <p class="text-center text-muted mb-5">일상 속에서도 스타일리시하게! 연예인처럼 연출할 수 있는 꿀팁 모음</p>
