@@ -29,20 +29,20 @@ public class ProductService {
         }
     }
 
-    // 🔹 상품 수정
     @Transactional
-    public void modify(Product product) throws Exception {
+    public void modify(Product product, boolean imageUpdated) throws Exception {
         productRepository.update(product);
 
-        // 기존 이미지 삭제 후 새로 삽입
-        productImageRepository.deleteByProductId(product.getProductId());
-        if (product.getImages() != null) {
+        if (imageUpdated && product.getImages() != null) {
+            productImageRepository.deleteByProductId(product.getProductId());
             for (ProductImage img : product.getImages()) {
                 img.setProductId(product.getProductId());
                 productImageRepository.insert(img);
             }
         }
     }
+
+
 
     // 🔹 상품 삭제
     @Transactional
