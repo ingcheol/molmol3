@@ -360,8 +360,16 @@
                 </div>
             </c:if>
 
+        </div>
 
+        <c:if test="${logincust != null && logincust.custId eq 'admin'}">
             <div class="col-auto">
+                <a href="/admin/cust/list" class="nav-link fw-bold text-danger" style="font-size: 20px;">🔧 회원관리(Admin)</a>
+            </div>
+        </c:if>
+
+
+        <div class="col-auto">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                         aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
