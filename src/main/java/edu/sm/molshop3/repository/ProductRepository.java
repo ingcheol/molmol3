@@ -14,4 +14,5 @@ public interface ProductRepository {
     void delete(int productId);
     Product select(int productId);
     List<Product> selectAll();
+    List<Product> selectAllWithImages();
 }

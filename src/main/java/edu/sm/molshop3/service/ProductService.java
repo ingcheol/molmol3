@@ -1,8 +1,8 @@
 package edu.sm.molshop3.service;
 
-import edu.sm.molshop3.dto.Item;
 import edu.sm.molshop3.dto.Product;
-import edu.sm.molshop3.repository.ItemRepository;
+import edu.sm.molshop3.dto.ProductImage;
+import edu.sm.molshop3.repository.ProductImageRepository;
 import edu.sm.molshop3.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,37 +15,64 @@ import java.util.List;
 public class ProductService {
 
     private final ProductRepository productRepository;
-    private final ItemRepository itemRepository;
+    private final ProductImageRepository productImageRepository;
 
+    // 🔹 상품 등록
     @Transactional
     public void register(Product product) {
         productRepository.insert(product);
-        // 구성품 insert는 이후 필요 시 구현
+        if (product.getImages() != null) {
+            for (ProductImage img : product.getImages()) {
+                img.setProductId(product.getProductId()); // FK 설정
+                productImageRepository.insert(img);
+            }
+        }
     }
 
+    // 🔹 상품 수정
     @Transactional
-    public void modify(Product product) {
+    public void modify(Product product) throws Exception {
         productRepository.update(product);
-        // 구성품 수정 로직 필요 시 추가
+
+        // 기존 이미지 삭제 후 새로 삽입
+        productImageRepository.deleteByProductId(product.getProductId());
+        if (product.getImages() != null) {
+            for (ProductImage img : product.getImages()) {
+                img.setProductId(product.getProductId());
+                productImageRepository.insert(img);
+            }
+        }
     }
 
+    // 🔹 상품 삭제
     @Transactional
     public void remove(int productId) {
-        productRepository.delete(productId);
-        // 구성품도 같이 지워지도록 DB에 ON DELETE CASCADE가 걸려있다면 따로 안 지워도 됨
+        productImageRepository.deleteByProductId(productId); // 이미지 먼저 삭제
+        productRepository.delete(productId);                 // 상품 삭제
     }
 
+    // 🔹 상품 단건 조회
     public Product get(int productId) {
         Product product = productRepository.select(productId);
         if (product != null) {
-            List<Item> items = itemRepository.selectByProductId(productId);
-            product.setItems(items);
+            List<ProductImage> images = productImageRepository.selectByProductId(productId);
+            product.setImages(images);
         }
         return product;
     }
 
-
     public List<Product> get() {
-        return productRepository.selectAll();
+        List<Product> products = productRepository.selectAll();
+        for (Product p : products) {
+            List<ProductImage> imgs = productImageRepository.selectByProductId(p.getProductId());
+            p.setImages(imgs);  // 이미지 리스트 주입
+
+            if (imgs != null && !imgs.isEmpty()) {
+                p.setImage(imgs.get(0).getProductImgUrl());  // 대표 이미지 설정
+            }
+        }
+        return products;
     }
+
+
 }

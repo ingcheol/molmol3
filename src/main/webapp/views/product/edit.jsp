@@ -8,7 +8,7 @@
 <body>
 <div class="container mt-5">
   <h2>상품 수정</h2>
-  <form action="/admin/product/edit" method="post">
+  <form action="/admin/product/edit" method="post" enctype="multipart/form-data">
     <!-- ID는 수정 불가하므로 hidden 처리 -->
     <input type="hidden" name="productId" value="${product.productId}"/>
 
@@ -27,14 +27,22 @@
       <input type="text" class="form-control" id="cateId" name="cateId" value="${product.cateId}">
     </div>
 
-    <div class="mb-3">
-      <label for="productDesc" class="form-label">설명</label>
-      <textarea class="form-control" id="productDesc" name="description" rows="3">${product.description}</textarea>
-    </div>
+    <!-- 이미지 미리보기 -->
+    <c:if test="${not empty product.images}">
+      <div class="mb-3">
+        <label class="form-label">기존 이미지</label>
+        <div>
+          <c:forEach var="img" items="${product.images}">
+            <img src="${img.productImgUrl}" alt="이미지" width="100" class="me-2 mb-2"/>
+          </c:forEach>
+        </div>
+      </div>
+    </c:if>
 
+    <!-- 이미지 업로드 -->
     <div class="mb-3">
-      <label for="productImage" class="form-label">이미지 파일명</label>
-      <input type="text" class="form-control" id="productImage" name="image" value="${product.image}">
+      <label for="imageFile" class="form-label">추가 이미지 업로드</label>
+      <input type="file" class="form-control" id="imageFile" name="imageFile" accept="image/*">
     </div>
 
     <button type="submit" class="btn btn-primary">수정 완료</button>
