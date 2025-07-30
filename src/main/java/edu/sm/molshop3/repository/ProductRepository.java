@@ -13,6 +13,7 @@ public interface ProductRepository {
     void update(Product product);
     void delete(int productId);
     Product select(int productId);
+    List<Product> selectByCategory(String cateId);
     List<Product> selectAll();
     List<Product> selectAllWithImages();
 }

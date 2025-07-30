@@ -78,4 +78,4 @@
   <label class="form-check-label" for="${item.id}">
   <strong>${item.name}</strong><br>
   <small>${item.desc}</small><br>
-  <span
+  <span>

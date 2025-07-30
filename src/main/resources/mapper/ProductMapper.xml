@@ -62,4 +62,12 @@
         DELETE FROM product WHERE product_id = #{productId}
     </delete>
 
+    <select id="selectByCategory" parameterType="String" resultMap="ProductMap">
+        SELECT p.*, c.cate_name, pi.product_img_id, pi.product_img_url
+        FROM product p
+                 LEFT JOIN category c ON p.cate_id = c.cate_id
+                 LEFT JOIN productimg pi ON p.product_id = pi.product_id
+        WHERE p.cate_id = #{cateId}
+    </select>
+
 </mapper>

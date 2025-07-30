@@ -17,6 +17,19 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final ProductImageRepository productImageRepository;
 
+    @Transactional
+    public List<Product> getByCategory(String cateId) {
+        List<Product> products = productRepository.selectByCategory(cateId);
+        for (Product p : products) {
+            List<ProductImage> imgs = productImageRepository.selectByProductId(p.getProductId());
+            p.setImages(imgs);
+            if (imgs != null && !imgs.isEmpty()) {
+                p.setImage(imgs.get(0).getProductImgUrl());
+            }
+        }
+        return products;
+    }
+
     // 🔹 상품 등록
     @Transactional
     public void register(Product product) {
