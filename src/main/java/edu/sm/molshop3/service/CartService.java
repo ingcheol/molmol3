@@ -9,4 +9,7 @@ public interface CartService {
     void updateQuantity(int cartId, int quantity) throws Exception;
     void delete(int cartId) throws Exception;
     List<Cart> findByCustId(String custId) throws Exception;
+
+    // 🔹 추가
+    void checkout(String custId) throws Exception;
 }

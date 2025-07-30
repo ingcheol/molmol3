@@ -24,9 +24,9 @@
             <h6 class="text-muted">${p.cateName}</h6>
             <h5>${p.productName}</h5>
             <p class="fw-bold text-primary">
-              <fmt:formatNumber value="${p.productPrice}" type="number" pattern="#\,###원"/>
+              <fmt:formatNumber value="${p.productPrice}" type="number" pattern="#,###원"/>
             </p>
-            <a href="/product/see?productId=${p.productId}" class="btn btn-outline-primary btn-sm">상세 보기</a>
+            <a href="/product/see?productId=${p.productId}&prevPage=hat" class="btn btn-outline-primary btn-sm">상세 보기</a>
 
           </div>
         </div>

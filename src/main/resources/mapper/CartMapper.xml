@@ -32,6 +32,9 @@
         WHERE c.cust_id = #{custId}
     </select>
 
-
+    <!-- 🔹 결제 후 장바구니 비우기 -->
+    <delete id="deleteByCustId" parameterType="String">
+        DELETE FROM cart WHERE cust_id = #{custId}
+    </delete>
 
 </mapper>

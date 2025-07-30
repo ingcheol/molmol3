@@ -1,5 +1,133 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
+    <div class="container-fluid">
+        <div class="row justify-content-between align-items-center w-100">
+            <div class="col-auto">
+                <span class="navbar-brand" style="
+                    font-size: 32px;
+                    font-weight: bold;
+                    background: linear-gradient(90deg, #FF6B6B, #FFA63D);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;">
+                    깔롱드
+                </span>
+            </div>
+
+            <c:if test="${logincust != null && logincust.custId eq 'admin'}">
+                <div class="col-auto">
+                    <a href="/admin/product/list" class="nav-link fw-bold text-danger" style="font-size: 20px;">🔧 상품관리(Admin)</a>
+                </div>
+            </c:if>
+        </div>
+
+        <c:if test="${logincust != null && logincust.custId eq 'admin'}">
+            <div class="col-auto">
+                <a href="/admin/cust/list" class="nav-link fw-bold text-danger" style="font-size: 20px;">🔧 회원관리(Admin)</a>
+            </div>
+        </c:if>
+
+        <div class="col-auto">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                 aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3">
+
+                        <!-- HOME -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="dropdownHome" data-bs-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">Home</a>
+                            <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownHome">
+                                <li><a href="index.html" class="dropdown-item item-anchor">베스트 착장</a></li>
+                                <li><a href="index.html" class="dropdown-item item-anchor">신상 착장</a></li>
+                                <li><a href="index.html" class="dropdown-item item-anchor">세트 착장 모음</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- SHOP -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownShop" data-bs-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownShop">
+                                <li><a href="/shop/top" class="dropdown-item item-anchor">상의</a></li>
+                                <li><a href="/shop/bottom" class="dropdown-item item-anchor">하의</a></li>
+                                <li><a href="/shop/hat" class="dropdown-item item-anchor">모자</a></li>
+                                <li><a href="/shop/shoes" class="dropdown-item item-anchor">신발</a></li>
+                                <li><a href="/shop/bag" class="dropdown-item item-anchor">가방</a></li>
+                                <li><a href="/shop/accessory" class="dropdown-item item-anchor">악세사리</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- BLOG -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownBlog" data-bs-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">Blog</a>
+                            <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
+                                <li><a href="/blog/star" class="dropdown-item item-anchor">스타 INSTAGRAM</a></li>
+                                <li><a href="/blog/tip" class="dropdown-item item-anchor">스타일링 팁</a></li>
+                                <li><a href="/blog/review" class="dropdown-item item-anchor">사용자 후기</a></li>
+                                <li><a href="/blog/video" class="dropdown-item item-anchor">스타일 영상</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- PAGES -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">Pages</a>
+                            <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
+                                <li><a href="/pages/information" class="dropdown-item item-anchor">내 정보</a></li>
+                                <li><a href="/cart" class="dropdown-item item-anchor">장바구니</a></li>
+                                <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
+                                <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- 로그인/카트/위시리스트 -->
+                        <a href="/cart" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
+                            CART <span class="cart-count ms-1">(0)</span>
+                        </a>
+
+                        <c:choose>
+                            <c:when test="${not empty logincust}">
+                                <li class="nav-link">
+                                    <span class="btn btn-light text-uppercase mx-1 px-3 py-1">
+                                        ${logincust.custName} 님
+                                    </span>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="/logout" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
+                                        LOGOUT
+                                    </a>
+                                </li>
+                            </c:when>
+                            <c:otherwise>
+                                <li class="nav-link">
+                                    <a href="/login" class="btn btn-dark text-uppercase mx-1 px-3 py-1">
+                                        LOGIN
+                                    </a>
+                                </li>
+                            </c:otherwise>
+                        </c:choose>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -39,107 +167,46 @@
 </head>
 <body>
 
-<!-- ✅ 상단 네비게이션 (메인과 동일) -->
-<nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
-    <div class="container-fluid">
-        <div class="row justify-content-between align-items-center w-100">
-            <div class="col-auto">
-        <span class="navbar-brand" style="
-                font-size: 32px;
-                font-weight: bold;
-                background: linear-gradient(90deg, #FF6B6B, #FFA63D);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;">
-          깔롱드
-        </span>
-            </div>
+
+<!-- ✅ 본문 내용 -->
+<c:forEach var="order" items="${orderList}">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light">
+            <strong>주문번호:</strong> ${order.orderId} |
+            <strong>주문일자:</strong> ${order.orderDate}
         </div>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-             aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-            </div>
-
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3">
-                    <!-- HOME -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="dropdownHome" data-bs-toggle="dropdown"
-                           aria-expanded="false">Home</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownHome">
-                            <li><a class="dropdown-item" href="/main/best">베스트 착장</a></li>
-                            <li><a class="dropdown-item" href="/main/new">신상 착장</a></li>
-                            <li><a class="dropdown-item" href="/main/set">세트 착장 모음</a></li>
-                        </ul>
+        <div class="card-body">
+            <ul class="list-group mb-3">
+                <c:forEach var="item" items="${order.orderItems}">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>${item.productName}</strong><br/>
+                            <small>수량: ${item.quantity}</small>
+                        </div>
+                        <span><fmt:formatNumber value="${item.price}" type="number"/>원</span>
                     </li>
+                </c:forEach>
+            </ul>
 
-                    <!-- SHOP -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownShop" data-bs-toggle="dropdown"
-                           aria-expanded="false">Shop</a>
-                        <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownShop">
-                            <li><a href="/shop/top" class="dropdown-item item-anchor">상의</a></li>
-                            <li><a href="/shop/bottom" class="dropdown-item item-anchor">하의</a></li>
-                            <li><a href="/shop/hat" class="dropdown-item item-anchor">모자</a></li>
-                            <li><a href="/shop/shoes" class="dropdown-item item-anchor">신발</a></li>
-                            <li><a href="/shop/bag" class="dropdown-item item-anchor">가방</a></li>
-                            <li><a href="/shop/accessory" class="dropdown-item item-anchor">악세사리</a></li>
-                        </ul>
-                    </li>
+            <c:set var="totalPrice" value="0" />
+            <c:forEach var="item" items="${order.orderItems}">
+                <c:set var="lineTotal" value="${item.price * item.quantity}" />
+                <c:set var="totalPrice" value="${totalPrice + lineTotal}" />
+            </c:forEach>
 
-                    <!-- BLOG -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownBlog" data-bs-toggle="dropdown"
-                           aria-expanded="false">Blog</a>
-                        <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
-                            <li><a href="/blog/star" class="dropdown-item item-anchor">스타 INSTAGRAM</a></li>
-                            <li><a href="/blog/tip" class="dropdown-item item-anchor">스타일링 팁</a></li>
-                            <li><a href="/blog/review" class="dropdown-item item-anchor">사용자 후기</a></li>
-                            <li><a href="/blog/video" class="dropdown-item item-anchor">스타일 영상</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- PAGES -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
-                           aria-expanded="false">Pages</a>
-                        <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
-                            <li><a href="/pages/information" class="dropdown-item item-anchor">내 정보</a></li>
-                            <li><a href="/wishlist" class="dropdown-item item-anchor">찜 목록</a></li>
-                            <li><a href="/cart" class="dropdown-item item-anchor">장바구니</a></li>
-                            <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
-                            <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
-                        </ul>
-
-                    </li>
-
-                    <!-- WISHLIST, CART, LOGIN -->
-                    <li class="nav-item">
-                        <a class="nav-link highlight-link" href="/wishlist">WISHLIST(0)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link highlight-link" href="/cart">CART(0)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link highlight-link" href="/login">LOGIN</a>
-                    </li>
-
-                </ul>
+            <div class="text-end fw-bold fs-5">
+                총 결제금액:
+                <fmt:formatNumber value="${totalPrice}" type="number"/>원
             </div>
         </div>
     </div>
-</nav>
+</c:forEach>
 
-<!-- ✅ 본문 내용 -->
-
+<c:if test="${empty orderList}">
+    <div class="alert alert-info">
+        주문 내역이 없습니다.
+    </div>
+</c:if>
 
 <!-- ✅ Bootstrap 기능 작동을 위한 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
