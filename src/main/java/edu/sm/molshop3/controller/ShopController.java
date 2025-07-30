@@ -49,4 +49,3 @@ public class ShopController {
         return "shop/accessory";
     }
 }
-

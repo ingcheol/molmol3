@@ -432,19 +432,13 @@
                             </li>
 
                             <!-- 상단 목록 로그인, 카트, 위시 리스트 -->
-                            <div class="col-3 col-lg-auto">
-                                <ul class="list-unstyled d-flex m-0 align-items-center">
-                                    <li class="nav-link">
-                                        <a href="index.html" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
-                                            WISHLIST <span class="wishlist-count ms-1">(0)</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-link">
-                                        <a href="index.html" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1"
-                                           data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                                            CART <span class="cart-count ms-1">(0)</span>
-                                        </a>
-                                    </li>
+                            <a href="/wishlist" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
+                                WISHLIST <span class="wishlist-count ms-1">(0)</span>
+                            </a>
+
+                            <a href="/cart" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
+                                CART <span class="cart-count ms-1">(0)</span>
+                            </a>
                                     <c:choose>
                                         <c:when test="${not empty logincust}">
                                             <li class="nav-link">

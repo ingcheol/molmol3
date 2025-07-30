@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.sm.molshop3.repository.CartRepository">
+
+    <insert id="insert" parameterType="Cart">
+        INSERT INTO cart (quantity, cust_id, product_id)
+        VALUES (#{productQt}, #{custId}, #{productId})
+    </insert>
+
+    <update id="updateQuantity">
+        UPDATE cart SET quantity = #{quantity} WHERE cart_id = #{cartId}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM cart WHERE cart_id = #{cartId}
+    </delete>
+
+    <select id="findByCustId" parameterType="String" resultType="Cart">
+        SELECT c.cart_id AS cartId,
+               c.quantity AS productQt,
+               c.cust_id AS custId,
+               c.product_id AS productId,
+               p.product_name AS productName,
+               p.product_price AS productPrice,
+               pi.product_img_url AS image
+        FROM cart c
+                 INNER JOIN product p ON c.product_id = p.product_id
+                 LEFT JOIN productimg pi ON p.product_id = pi.product_id
+        WHERE c.cust_id = #{custId}
+    </select>
+
+
+
+</mapper>
