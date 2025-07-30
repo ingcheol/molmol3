@@ -16,4 +16,6 @@ public interface ProductRepository {
     List<Product> selectByCategory(String cateId);
     List<Product> selectAll();
     List<Product> selectAllWithImages();
+    List<Product> selectBest();
+    List<Product> selectNew();
 }

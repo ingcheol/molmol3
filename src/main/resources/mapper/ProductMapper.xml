@@ -70,4 +70,13 @@
         WHERE p.cate_id = #{cateId}
     </select>
 
+    <!-- 베스트 상품: 가격 높은 순 -->
+    <select id="selectBest" resultType="Product">
+        SELECT * FROM product ORDER BY product_price DESC LIMIT 12
+    </select>
+
+    <!-- 신상품: 최근 등록 순 -->
+    <select id="selectNew" resultType="Product">
+        SELECT * FROM product ORDER BY reg_date DESC LIMIT 12
+    </select>
 </mapper>

@@ -87,5 +87,32 @@ public class ProductService {
         return products;
     }
 
+    public List<Product> getBestProducts() {
+        List<Product> products = productRepository.selectBest(); // 예: 가격순
+        for (Product p : products) {
+            List<ProductImage> imgs = productImageRepository.selectByProductId(p.getProductId());
+            p.setImages(imgs);
+            if (imgs != null && !imgs.isEmpty()) {
+                p.setImage(imgs.get(0).getProductImgUrl());
+            }
+        }
+        return products;
+    }
+
+    // 🔹 신상품 (등록일 기준 정렬)
+    public List<Product> getNewProducts() {
+        List<Product> products = productRepository.selectNew(); // 최신순으로 정렬된 전체 상품
+
+        for (Product p : products) {
+            List<ProductImage> imgs = productImageRepository.selectByProductId(p.getProductId());
+            p.setImages(imgs);
+            if (imgs != null && !imgs.isEmpty()) {
+                p.setImage(imgs.get(0).getProductImgUrl());
+            }
+        }
+
+        // 최신순 중 상위 6개만 반환
+        return products.stream().limit(6).toList();
+    }
 
 }
