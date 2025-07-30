@@ -77,7 +77,6 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownHome">
               <li><a class="dropdown-item" href="/main/best">베스트 착장</a></li>
               <li><a class="dropdown-item" href="/main/new">신상 착장</a></li>
-              <li><a class="dropdown-item" href="/main/set">세트 착장 모음</a></li>
             </ul>
           </li>
 
