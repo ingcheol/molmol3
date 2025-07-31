@@ -217,6 +217,16 @@
             style="width: 100%; padding: 12px; background-color: #ff4d4d; color: white; font-weight: bold; border: none; margin-top: 20px;">
       로그인
     </button>
+    <!-- 소셜 로그인 아이콘 영역 -->
+    <div class="mt-4 text-center">
+      <p class="mb-2">SNS 계정으로 로그인</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#"><img src="/image/apple.jpg" alt="Apple Login" width="48" height="48"></a>
+        <a href="#"><img src="/image/kakao.jpg" alt="Kakao Login" width="48" height="48"></a>
+        <a href="#"><img src="/image/naver.jpg" alt="Naver Login" width="48" height="48"></a>
+        <a href="#"><img src="/image/toss.jpg" alt="Toss Login" width="48" height="48"></a>
+      </div>
+    </div>
   </form>
 </div>
 

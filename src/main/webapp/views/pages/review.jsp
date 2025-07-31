@@ -118,15 +118,36 @@
           </li>
 
           <!-- WISHLIST, CART, LOGIN -->
-          <li class="nav-item">
-            <a class="nav-link highlight-link" href="/wishlist">WISHLIST(0)</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link highlight-link" href="/cart">CART(0)</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link highlight-link" href="/login">LOGIN</a>
-          </li>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- 로그인 안한 상태 -->
+            <c:if test="${empty logincust}">
+              <li class="nav-item">
+                <a class="nav-link" href="/wishlist">WISHLIST(0)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cart">CART(0)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">LOGIN</a>
+              </li>
+            </c:if>
+
+            <!-- 로그인한 상태 -->
+            <c:if test="${not empty logincust}">
+              <li class="nav-item">
+                <a class="nav-link" href="/wishlist">WISHLIST(0)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cart">CART(0)</a>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link text-nowrap">${logincust.custName} 님</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">LOGOUT</a>
+              </li>
+            </c:if>
+          </ul>
 
         </ul>
       </div>

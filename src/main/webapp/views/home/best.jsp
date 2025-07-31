@@ -122,15 +122,36 @@
           </li>
 
           <!-- WISHLIST, CART, LOGIN -->
-          <li class="nav-item">
-            <a class="nav-link highlight-link" href="/wishlist">WISHLIST(0)</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link highlight-link" href="/cart">CART(0)</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link highlight-link" href="/login">LOGIN</a>
-          </li>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- 로그인 안한 상태 -->
+            <c:if test="${empty logincust}">
+              <li class="nav-item">
+                <a class="nav-link" href="/wishlist">WISHLIST(0)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cart">CART(0)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">LOGIN</a>
+              </li>
+            </c:if>
+
+            <!-- 로그인한 상태 -->
+            <c:if test="${not empty logincust}">
+              <li class="nav-item">
+                <a class="nav-link" href="/wishlist">WISHLIST(0)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cart">CART(0)</a>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link text-nowrap">${logincust.custName} 님</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">LOGOUT</a>
+              </li>
+            </c:if>
+          </ul>
 
         </ul>
       </div>
@@ -142,6 +163,7 @@
 <div>
   <a href="/" class="btn btn-secondary">홈으로</a>
 </div>
+
 <div class="container mt-5">
   <h2 class="text-center mb-4">베스트 착장 리스트</h2>
   <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -155,7 +177,8 @@
             <p class="fw-bold text-primary">
               <fmt:formatNumber value="${p.productPrice}" type="number" pattern="#,###원"/>
             </p>
-            <a href="/productitem/see?id=${p.productId}" class="btn btn-outline-primary btn-sm">상세 보기</a>
+            <!-- 🔽 여기 수정됨 -->
+            <a href="/product/see?productId=${p.productId}" class="btn btn-outline-primary btn-sm">상세 보기</a>
           </div>
         </div>
       </div>

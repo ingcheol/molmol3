@@ -75,9 +75,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="dropdownHome" data-bs-toggle="dropdown"
                            aria-expanded="false">Home</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownHome">
-                            <li><a class="dropdown-item" href="/main/best">베스트 착장</a></li>
-                            <li><a class="dropdown-item" href="/main/new">신상 착장</a></li>
+                        <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownHome">
+                            <li><a href="/home/best" class="dropdown-item item-anchor">베스트 착장</a></li>
+                            <li><a href="/home/new" class="dropdown-item item-anchor">신상 착장</a></li>
                         </ul>
                     </li>
 
@@ -121,15 +121,36 @@
                     </li>
 
                     <!-- WISHLIST, CART, LOGIN -->
-                    <li class="nav-item">
-                        <a class="nav-link highlight-link" href="/wishlist">WISHLIST(0)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link highlight-link" href="/cart">CART(0)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link highlight-link" href="/login">LOGIN</a>
-                    </li>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <!-- 로그인 안한 상태 -->
+                        <c:if test="${empty logincust}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/wishlist">WISHLIST(0)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/cart">CART(0)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">LOGIN</a>
+                            </li>
+                        </c:if>
+
+                        <!-- 로그인한 상태 -->
+                        <c:if test="${not empty logincust}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/wishlist">WISHLIST(0)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/cart">CART(0)</a>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-link text-nowrap">${logincust.custName} 님</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">LOGOUT</a>
+                            </li>
+                        </c:if>
+                    </ul>
 
                 </ul>
             </div>

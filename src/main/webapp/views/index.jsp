@@ -428,7 +428,6 @@
                                     <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
                                     <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
                                 </ul>
-
                             </li>
 
                             <!-- 상단 목록 로그인, 카트, 위시 리스트 -->
