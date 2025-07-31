@@ -23,67 +23,59 @@ public class OrderService {
     private final PaymentRepository paymentRepository;
     private final CartRepository cartRepository;
 
-    /**
-     * 🧾 결제 전체 처리 흐름 (사용 안 할 수도 있음)
-     */
     @Transactional
     public void processOrder(String custId, String paymentMethod) {
         Order order = new Order();
         order.setCustId(custId);
-        orderRepository.insert(order); // order_id 생성
+        orderRepository.insert(order);
 
         List<Cart> carts = cartRepository.findByCustId(custId);
         for (Cart cart : carts) {
-            OrderItem orderItem = new OrderItem();
-            orderItem.setOrderId(order.getOrderId());
-            orderItem.setProductId(cart.getProductId());
-            orderItem.setQuantity(cart.getProductQt());
-            orderItem.setPrice(cart.getProductPrice() * cart.getProductQt());
+            OrderItem item = OrderItem.builder()
+                    .orderId(order.getOrderId())
+                    .productId(cart.getProductId())
+                    .quantity(cart.getProductQt())
+                    .price(cart.getProductPrice() * cart.getProductQt())
+                    .build();
 
-            // 💥 중복 방지용 delete 추가
-            orderItemRepository.delete(orderItem);
-
-            orderItemRepository.insert(orderItem);
+            orderItemRepository.delete(item);
+            orderItemRepository.insert(item);
         }
 
-        Payment payment = new Payment();
-        payment.setOrderId(order.getOrderId());
-        payment.setPaymentMethod(paymentMethod);
-        payment.setPaymentStatus("완료");
+        Payment payment = Payment.builder()
+                .orderId(order.getOrderId())
+                .paymentMethod(paymentMethod)
+                .paymentStatus("완료")
+                .build();
         paymentRepository.insert(payment);
 
-        cartRepository.deleteByCustId(custId); // 장바구니 비우기
+        cartRepository.deleteByCustId(custId);
     }
 
     @Transactional
     public int placeOrder(Order order, List<Cart> cartList) {
-        orderRepository.insert(order); // orderId 자동 생성됨
-
+        orderRepository.insert(order);
         for (Cart cart : cartList) {
-            OrderItem item = new OrderItem();
-            item.setOrderId(order.getOrderId());
-            item.setProductId(cart.getProductId());
-            item.setQuantity(cart.getProductQt());
-            item.setPrice(cart.getProductPrice() * cart.getProductQt());
+            OrderItem item = OrderItem.builder()
+                    .orderId(order.getOrderId())
+                    .productId(cart.getProductId())
+                    .quantity(cart.getProductQt())
+                    .price(cart.getProductPrice() * cart.getProductQt())
+                    .build();
 
-            // 💥 중복 방지용 delete 추가
             orderItemRepository.delete(item);
-
             orderItemRepository.insert(item);
         }
-
         return order.getOrderId();
     }
+
+    // ▶ 리뷰 페이지용 주문 목록 제공
     public List<Order> getOrdersByCustId(String custId) {
-        List<Order> orders = orderRepository.selectByCustId(custId); // 주문 목록 가져오기
-
-        for (Order order : orders) {
-            List<OrderItem> orderItems = orderItemRepository.selectByOrderId(order.getOrderId());
-            order.setOrderItems(orderItems); // 주문에 해당하는 아이템 리스트 세팅
+        List<Order> orders = orderRepository.selectByCustId(custId);
+        for (Order o : orders) {
+            List<OrderItem> items = orderItemRepository.selectByOrderId(o.getOrderId());
+            o.setOrderItems(items);
         }
-
         return orders;
     }
-
-
 }

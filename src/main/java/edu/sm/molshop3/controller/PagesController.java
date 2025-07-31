@@ -28,11 +28,6 @@ public class PagesController {
         return "/pages/information";
     }
 
-    // ✅ 리뷰 작성 페이지
-    @GetMapping("/pages/review")
-    public String showReviewPage() {
-        return "/pages/review";
-    }
 
     // ✅ 주문 내역 페이지
     @GetMapping("/pages/orders")

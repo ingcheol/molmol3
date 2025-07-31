@@ -24,7 +24,7 @@ public class OrderController {
     public String showCheckout(HttpSession session, Model model) throws Exception {
         Cust cust = (Cust) session.getAttribute("logincust");
         if (cust == null) {
-            return "redirect:/login"; // 로그인 안되어 있으면 로그인 페이지로 이동
+            return "redirect:/login";
         }
 
         List<Cart> cartList = cartService.findByCustId(cust.getCustId());
@@ -36,7 +36,7 @@ public class OrderController {
         model.addAttribute("totalAmount", totalAmount);
         model.addAttribute("logincust", cust);
 
-        return "/order/checkout"; // 💡 prefix가 /views/일 경우, 절대경로처럼 슬래시 붙여야 함
+        return "/order/checkout";
     }
 
     // ✅ 결제 처리
@@ -55,6 +55,6 @@ public class OrderController {
     // ✅ 결제 완료
     @GetMapping("/order/complete")
     public String orderComplete() {
-        return "/order/orderComplete";  // 슬래시 붙여야 /views/order/orderComplete.jsp 매칭됨
+        return "/order/orderComplete";
     }
 }

@@ -12,6 +12,8 @@
 <body>
 <div class="container mt-5">
     <a href="/" class="btn btn-secondary mb-3">&larr; 홈</a>
+
+    <!-- 🔹 상품 정보 -->
     <div class="row">
         <div class="col-md-6">
             <img src="${product.image}" alt="${product.productName}" style="width:300px;" class="img-fluid">
@@ -23,6 +25,7 @@
                 <fmt:formatNumber value="${product.productPrice}" type="number" pattern="#,###원"/>
             </h4>
 
+            <!-- 🔹 장바구니 담기 -->
             <c:choose>
                 <c:when test="${not empty sessionScope.logincust}">
                     <form action="/cart/add" method="post" class="mb-3">
@@ -39,68 +42,43 @@
         </div>
     </div>
 
-    <!-- 리뷰 목록 표시 -->
+    <!-- 🔹 리뷰 조회만 (작성 기능 없음) -->
     <div class="mt-5">
         <h4 class="mb-4">📝 상품 리뷰</h4>
-        <c:forEach var="review" items="${reviews}">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <strong>${review.custId}</strong>님
-                            <span class="ms-2 text-warning">
-                                <c:forEach begin="1" end="5" var="i">
-                                    <c:choose>
-                                        <c:when test="${i <= review.score}">&#9733;</c:when>
-                                        <c:otherwise>&#9734;</c:otherwise>
-                                    </c:choose>
-                                </c:forEach>
-                            </span>
-                        </div>
-                        <div class="text-muted">
-                            <fmt:formatDate value="${review.regDate}" pattern="yyyy-MM-dd HH:mm"/>
+
+        <c:choose>
+            <c:when test="${not empty reviews}">
+                <c:forEach var="review" items="${reviews}">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <strong>${review.custId}</strong>님
+                                    <span class="ms-2 text-warning">
+                                        <c:forEach begin="1" end="5" var="i">
+                                            <c:choose>
+                                                <c:when test="${i <= review.score}">★</c:when>
+                                                <c:otherwise>☆</c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </span>
+                                </div>
+                                <div class="text-muted">
+                                    <fmt:formatDate value="${review.regDate}" pattern="yyyy-MM-dd HH:mm"/>
+                                </div>
+                            </div>
+                            <p class="mt-2 mb-0">${review.content}</p>
                         </div>
                     </div>
-                    <p class="mt-2 mb-0">${review.content}</p>
+                </c:forEach>
+            </c:when>
+            <c:otherwise>
+                <div class="text-center py-5 text-muted">
+                    <p>아직 작성된 리뷰가 없습니다.</p>
                 </div>
-            </div>
-        </c:forEach>
+            </c:otherwise>
+        </c:choose>
     </div>
-
-    <!-- 리뷰 작성 폼 -->
-    <c:if test="${not empty sessionScope.logincust}">
-        <div class="mt-5">
-            <h5>✍️ 리뷰 작성하기</h5>
-            <form action="/reviews/add" method="post" class="border p-3 rounded shadow-sm bg-light">
-                <input type="hidden" name="productId" value="${product.productId}">
-
-                <div class="mb-2">
-                    <label>주문번호</label>
-                    <input type="number" name="orderId" required class="form-control">
-                </div>
-                <div class="mb-2">
-                    <label>평점</label>
-                    <select name="score" class="form-select" required>
-                        <option value="5">★★★★★</option>
-                        <option value="4">★★★★☆</option>
-                        <option value="3">★★★☆☆</option>
-                        <option value="2">★★☆☆☆</option>
-                        <option value="1">★☆☆☆☆</option>
-                    </select>
-                </div>
-                <div class="mb-2">
-                    <label>리뷰 내용</label>
-                    <textarea name="content" class="form-control" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">리뷰 작성</button>
-            </form>
-        </div>
-    </c:if>
-    <c:if test="${empty sessionScope.logincust}">
-        <div class="alert alert-warning mt-3">
-            <a href="/login" class="btn btn-outline-dark">로그인 후 리뷰 작성 가능</a>
-        </div>
-    </c:if>
 </div>
 </body>
 </html>

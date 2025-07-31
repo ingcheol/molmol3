@@ -4,7 +4,6 @@ import lombok.*;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -15,5 +14,4 @@ public class OrderItem {
     private int price;
     private String productName;
     private String productImgUrl;
-
 }

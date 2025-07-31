@@ -14,6 +14,4 @@ public class Order {
     private Timestamp orderDate;
     private String custId;
     private List<OrderItem> orderItems;
-
 }
-
