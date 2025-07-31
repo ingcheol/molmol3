@@ -8,6 +8,7 @@ public class Cart {
     private int productQt;
     private String custId;
     private int productId;
+    private String prevPage; //추가
 
     // 조인용
     private String productName;

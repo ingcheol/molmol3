@@ -16,4 +16,5 @@ public class Cust {
     private String custEmail;       // 병합 추가
     private Date custRegdate;
     private Date custUpdate;
+
 }

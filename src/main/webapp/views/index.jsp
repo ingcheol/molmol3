@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <style>
     .search-ranking li {
         font-size: 16px;
@@ -423,7 +424,7 @@
                                    aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
                                     <li><a href="/pages/information" class="dropdown-item item-anchor">내 정보</a></li>
-                                    <li><a href="/wishlist" class="dropdown-item item-anchor">찜 목록</a></li>
+<%--                                    <li><a href="/wishlist" class="dropdown-item item-anchor">찜 목록</a></li>--%>
                                     <li><a href="/cart" class="dropdown-item item-anchor">장바구니</a></li>
                                     <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
                                     <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
@@ -432,9 +433,9 @@
                             </li>
 
                             <!-- 상단 목록 로그인, 카트, 위시 리스트 -->
-                            <a href="/wishlist" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
-                                WISHLIST <span class="wishlist-count ms-1">(0)</span>
-                            </a>
+<%--                            <a href="/wishlist" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">--%>
+<%--                                WISHLIST <span class="wishlist-count ms-1">(0)</span>--%>
+<%--                            </a>--%>
 
                             <a href="/cart" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
                                 CART <span class="cart-count ms-1">(0)</span>
@@ -466,7 +467,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </nav>
 
 

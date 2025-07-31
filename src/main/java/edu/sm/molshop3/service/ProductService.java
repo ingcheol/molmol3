@@ -17,54 +17,36 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final ProductImageRepository productImageRepository;
 
-    @Transactional
+    // 🔹 카테고리별 상품 리스트 조회 (+대표 이미지 포함)
+    @Transactional(readOnly = true)
     public List<Product> getByCategory(String cateId) {
         List<Product> products = productRepository.selectByCategory(cateId);
         for (Product p : products) {
             List<ProductImage> imgs = productImageRepository.selectByProductId(p.getProductId());
             p.setImages(imgs);
             if (imgs != null && !imgs.isEmpty()) {
-                p.setImage(imgs.get(0).getProductImgUrl());
+                p.setImage(imgs.get(0).getProductImgUrl()); // 대표 이미지 설정
             }
         }
         return products;
     }
 
-    // 🔹 상품 등록
-    @Transactional
-    public void register(Product product) {
-        productRepository.insert(product);
-        if (product.getImages() != null) {
-            for (ProductImage img : product.getImages()) {
-                img.setProductId(product.getProductId()); // FK 설정
-                productImageRepository.insert(img);
+    // 🔹 전체 상품 리스트 조회 (관리자용)
+    @Transactional(readOnly = true)
+    public List<Product> get() {
+        List<Product> products = productRepository.selectAll();
+        for (Product p : products) {
+            List<ProductImage> imgs = productImageRepository.selectByProductId(p.getProductId());
+            p.setImages(imgs);
+            if (imgs != null && !imgs.isEmpty()) {
+                p.setImage(imgs.get(0).getProductImgUrl()); // 대표 이미지 설정
             }
         }
+        return products;
     }
 
-    @Transactional
-    public void modify(Product product, boolean imageUpdated) throws Exception {
-        productRepository.update(product);
-
-        if (imageUpdated && product.getImages() != null) {
-            productImageRepository.deleteByProductId(product.getProductId());
-            for (ProductImage img : product.getImages()) {
-                img.setProductId(product.getProductId());
-                productImageRepository.insert(img);
-            }
-        }
-    }
-
-
-
-    // 🔹 상품 삭제
-    @Transactional
-    public void remove(int productId) {
-        productImageRepository.deleteByProductId(productId); // 이미지 먼저 삭제
-        productRepository.delete(productId);                 // 상품 삭제
-    }
-
-    // 🔹 상품 단건 조회
+    // 🔹 단일 상품 조회 (상세 페이지용)
+    @Transactional(readOnly = true)
     public Product get(int productId) {
         Product product = productRepository.select(productId);
         if (product != null) {
@@ -74,45 +56,37 @@ public class ProductService {
         return product;
     }
 
-    public List<Product> get() {
-        List<Product> products = productRepository.selectAll();
-        for (Product p : products) {
-            List<ProductImage> imgs = productImageRepository.selectByProductId(p.getProductId());
-            p.setImages(imgs);  // 이미지 리스트 주입
-
-            if (imgs != null && !imgs.isEmpty()) {
-                p.setImage(imgs.get(0).getProductImgUrl());  // 대표 이미지 설정
+    // 🔹 상품 등록
+    @Transactional
+    public void register(Product product) {
+        productRepository.insert(product);
+        if (product.getImages() != null) {
+            for (ProductImage img : product.getImages()) {
+                img.setProductId(product.getProductId());
+                productImageRepository.insert(img);
             }
         }
-        return products;
     }
 
-    public List<Product> getBestProducts() {
-        List<Product> products = productRepository.selectBest(); // 예: 가격순
-        for (Product p : products) {
-            List<ProductImage> imgs = productImageRepository.selectByProductId(p.getProductId());
-            p.setImages(imgs);
-            if (imgs != null && !imgs.isEmpty()) {
-                p.setImage(imgs.get(0).getProductImgUrl());
+    // 🔹 상품 수정 (이미지 업데이트 여부 포함)
+    @Transactional
+    public void modify(Product product, boolean imageUpdated) throws Exception {
+        productRepository.update(product);
+
+        if (imageUpdated && product.getImages() != null) {
+            // 기존 이미지 삭제 후 다시 삽입
+            productImageRepository.deleteByProductId(product.getProductId());
+            for (ProductImage img : product.getImages()) {
+                img.setProductId(product.getProductId());
+                productImageRepository.insert(img);
             }
         }
-        return products;
     }
 
-    // 🔹 신상품 (등록일 기준 정렬)
-    public List<Product> getNewProducts() {
-        List<Product> products = productRepository.selectNew(); // 최신순으로 정렬된 전체 상품
-
-        for (Product p : products) {
-            List<ProductImage> imgs = productImageRepository.selectByProductId(p.getProductId());
-            p.setImages(imgs);
-            if (imgs != null && !imgs.isEmpty()) {
-                p.setImage(imgs.get(0).getProductImgUrl());
-            }
-        }
-
-        // 최신순 중 상위 6개만 반환
-        return products.stream().limit(6).toList();
+    // 🔹 상품 삭제 (이미지 포함)
+    @Transactional
+    public void remove(int productId) {
+        productImageRepository.deleteByProductId(productId); // 이미지 먼저 삭제
+        productRepository.delete(productId);                 // 그 다음 상품 삭제
     }
-
 }

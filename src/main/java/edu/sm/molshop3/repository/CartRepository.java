@@ -11,4 +11,7 @@ public interface CartRepository {
     void updateQuantity(int cartId, int quantity);
     void delete(int cartId);
     List<Cart> findByCustId(String custId);
+
+    // 🔹 결제 완료 시 고객 장바구니 비우기
+    void deleteByCustId(String custId);
 }

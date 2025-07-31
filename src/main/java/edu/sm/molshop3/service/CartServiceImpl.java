@@ -32,4 +32,10 @@ public class CartServiceImpl implements CartService {
     public List<Cart> findByCustId(String custId) throws Exception {
         return cartRepository.findByCustId(custId);
     }
+
+    // 🔹 checkout 기능 구현
+    @Override
+    public void checkout(String custId) throws Exception {
+        cartRepository.deleteByCustId(custId);
+    }
 }

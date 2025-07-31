@@ -1,7 +1,9 @@
 package edu.sm.molshop3.controller;
 
 import edu.sm.molshop3.dto.Cust;
+import edu.sm.molshop3.dto.Order;
 import edu.sm.molshop3.service.CustService;
+import edu.sm.molshop3.service.OrderService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,12 +11,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @Slf4j
 @RequiredArgsConstructor
 public class LoginController {
 
     final CustService custService;
+    final OrderService orderService;
+
 
     @GetMapping("/login")
     public String loginPage() {
@@ -71,3 +77,5 @@ public class LoginController {
         return "redirect:/";
     }
 }
+
+

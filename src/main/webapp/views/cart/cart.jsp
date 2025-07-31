@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,7 +11,18 @@
 </head>
 <body>
 <div class="container mt-5">
-  <a href="/" class="btn btn-secondary mb-3">&larr; 홈으로</a>
+
+  <!-- 상단 이동 버튼 -->
+  <div class="d-flex justify-content-between mb-3">
+    <a href="/" class="btn btn-secondary">&larr; 홈으로</a>
+    <c:if test="${not empty prevPage}">
+      <a href="/shop/${prevPage}" class="btn btn-primary">🛍️ 쇼핑 계속하기</a>
+    </c:if>
+    <c:if test="${empty prevPage}">
+      <a href="/" class="btn btn-primary">🛍️ 쇼핑 계속하기</a>
+    </c:if>
+  </div>
+
   <h2 class="mb-4">🛒 장바구니</h2>
 
   <c:choose>
@@ -55,16 +67,21 @@
         </tbody>
       </table>
 
-      <!-- ✅ 총 금액 표시 -->
+      <!-- 총 금액 표시 -->
       <div class="d-flex justify-content-end mt-3">
         <h5 class="fw-bold">
           총 결제 금액:
           <fmt:formatNumber value="${total}" type="number" pattern="#,###원"/>
         </h5>
       </div>
-
     </c:otherwise>
   </c:choose>
+
+  <!-- ✅ [수정됨] 결제하기 버튼: GET 요청으로 변경 -->
+  <form action="/order/checkout" method="get" class="mt-3 d-flex justify-content-end">
+    <button type="submit" class="btn btn-success btn-lg">💳 결제하기</button>
+  </form>
+
 </div>
 </body>
 </html>
