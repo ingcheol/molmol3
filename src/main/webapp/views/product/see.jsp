@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <!-- 🔹 리뷰 조회만 (작성 기능 없음) -->
+    <!-- 🔹 리뷰 영역 -->
     <div class="mt-5">
         <h4 class="mb-4">📝 상품 리뷰</h4>
 
@@ -64,8 +64,19 @@
                                         </c:forEach>
                                     </span>
                                 </div>
-                                <div class="text-muted">
-                                    <fmt:formatDate value="${review.regDate}" pattern="yyyy-MM-dd HH:mm"/>
+                                <div class="text-end">
+                                    <div class="text-muted">
+                                        <fmt:formatDate value="${review.regDate}" pattern="yyyy-MM-dd HH:mm"/>
+                                    </div>
+                                    <c:if test="${sessionScope.logincust != null
+                                        && (sessionScope.logincust.custId == review.custId
+                                            || sessionScope.logincust.custId == 'admin')}">
+                                        <form action="/review/delete" method="post" style="display:inline;">
+                                            <input type="hidden" name="reviewId" value="${review.reviewId}">
+                                            <input type="hidden" name="productId" value="${product.productId}">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger mt-1">삭제</button>
+                                        </form>
+                                    </c:if>
                                 </div>
                             </div>
                             <p class="mt-2 mb-0">${review.content}</p>
