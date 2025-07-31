@@ -43,9 +43,6 @@
 
 <!-- ✅ 본문 내용 -->
 <div class="mb-3 d-flex justify-content-between">
-  <div>
-    <a href="/" class="btn btn-secondary">홈으로</a>
-  </div>
 <div class="container mt-5">
   <h2 class="text-center fw-bold mb-4" style="letter-spacing: 1px;">스타일링 팁</h2>
   <p class="text-center text-muted mb-5">일상 속에서도 스타일리시하게! 연예인처럼 연출할 수 있는 꿀팁 모음</p>

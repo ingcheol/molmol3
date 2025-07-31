@@ -2,17 +2,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
   <div class="container-fluid">
-    <div class="row justify-content-between align-items-center w-100">
-      <div class="col-auto">
-        <span class="navbar-brand" style="
-                font-size: 32px;
-                font-weight: bold;
-                background: linear-gradient(90deg, #FF6B6B, #FFA63D);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;">
-          깔롱드
-        </span>
-      </div>
+    <div class="row justify-content-between align-items-center w-100"><div class="col-auto">
+      <a href="/" class="navbar-brand" style="
+      font-size: 32px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #FF6B6B, #FFA63D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;">
+        깔롱드
+      </a>
+    </div>
+
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -79,12 +80,25 @@
           </li>
 
           <!-- WISHLIST, CART, LOGIN -->
-          <li class="nav-item">
-            <a class="nav-link highlight-link" href="/cart">CART(0)</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link highlight-link" href="/login">LOGIN</a>
-          </li>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- 로그인 안한 상태 -->
+            <c:if test="${empty logincust}">
+
+              <li class="nav-item">
+                <a class="nav-link" href="/login">LOGIN</a>
+              </li>
+            </c:if>
+
+            <!-- 로그인한 상태 -->
+            <c:if test="${not empty logincust}">
+              <li class="nav-item">
+                <span class="nav-link text-nowrap">${logincust.custName} 님</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">LOGOUT</a>
+              </li>
+            </c:if>
+          </ul>
 
         </ul>
       </div>

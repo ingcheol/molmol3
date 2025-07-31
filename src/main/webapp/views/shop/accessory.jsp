@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container mt-3">
-    <a href="/" class="btn btn-secondary">&larr; 홈으로</a>
-</div>
 <div class="container mt-5">
     <h2 class="text-center mb-4">💎 악세사리 상품 리스트</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">

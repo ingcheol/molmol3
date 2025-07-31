@@ -44,9 +44,6 @@
 
 <!-- ✅ 본문 내용 -->
 <div class="mb-3 d-flex justify-content-between">
-    <div>
-        <a href="/" class="btn btn-secondary">홈으로</a>
-    </div>
 <div class="container mt-5">
     <h2 class="text-center fw-bold mb-4" style="letter-spacing: 1px;">스타일 영상</h2>
     <p class="text-center text-muted mb-5">연예인들의 착장과 스타일링 노하우를 영상으로 만나보세요.</p>

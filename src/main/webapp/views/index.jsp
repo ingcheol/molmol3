@@ -436,9 +436,7 @@
 <%--                                WISHLIST <span class="wishlist-count ms-1">(0)</span>--%>
 <%--                            </a>--%>
 
-                            <a href="/cart" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
-                                CART <span class="cart-count ms-1">(0)</span>
-                            </a>
+
                                     <c:choose>
                                         <c:when test="${not empty logincust}">
                                             <li class="nav-link">
@@ -656,18 +654,22 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
+                    <div class="swiper-pagination"></div>
 
-                        <div class="swiper-pagination"></div>
+                    <!-- ✅ 좌우 화살표: 상단에 떠있게 수정 -->
+                    <div class="icon-arrow icon-arrow-left" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); z-index: 10;">
+                        <svg width="50" height="50" viewBox="0 0 24 24">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </div>
+                    <div class="icon-arrow icon-arrow-right" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); z-index: 10;">
+                        <svg width="50" height="50" viewBox="0 0 24 24">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </div>
                 </div>
-                <div class="icon-arrow icon-arrow-left"><svg width="50" height="50" viewBox="0 0 24 24">
-                    <use xlink:href="#arrow-left"></use>
-                </svg></div>
-                <div class="icon-arrow icon-arrow-right"><svg width="50" height="50" viewBox="0 0 24 24">
-                    <use xlink:href="#arrow-right"></use>
-                </svg></div>
-            </div>
-        </div>
     </section>
 
     <section class="features py-5">
@@ -724,14 +726,14 @@
                     <div class="col-md-4">
                         <div class="cat-item image-zoom-effect">
                             <div class="image-holder category-box">
-                                <a href="index.html">
-                                    <img src="image/categori.jpg" alt="Shop for men" class="category-img">
+                                <a href="/shop/top">
+                                    <img src="image/pdimage/seulgi6.jpg" alt="상의" class="category-img">
                                 </a>
                             </div>
 
                             <div class="category-content">
                                 <div class="product-button">
-                                    <a href="index.html" class="btn btn-common text-uppercase">Shop for men</a>
+                                    <a href="/shop/top" class="btn btn-common text-uppercase">상의</a>
                                 </div>
                             </div>
                         </div>
@@ -739,14 +741,14 @@
                     <div class="col-md-4">
                         <div class="cat-item image-zoom-effect">
                             <div class="image-holder category-box">
-                                <a href="index.html">
-                                    <img src="image/categori1.jpg" alt="Shop for women" class="category-img">
+                                <a href="/shop/bottom">
+                                    <img src="image/pdimage/winter3.jpg" alt="하의" class="category-img">
                                 </a>
                             </div>
 
                             <div class="category-content">
                                 <div class="product-button">
-                                    <a href="index.html" class="btn btn-common text-uppercase">Shop for women</a>
+                                    <a href="/shop/bottom" class="btn btn-common text-uppercase">하의</a>
                                 </div>
                             </div>
                         </div>
@@ -754,14 +756,14 @@
                     <div class="col-md-4">
                         <div class="cat-item image-zoom-effect">
                             <div class="image-holder category-box">
-                                <a href="index.html">
-                                    <img src="image/categori2.jpg" alt="Shop accessories" class="category-img">
+                                <a href="/shop/accessory">
+                                    <img src="image/categori2.jpg" alt="악세사리" class="category-img">
                                 </a>
                             </div>
 
                             <div class="category-content">
                                 <div class="product-button">
-                                    <a href="index.html" class="btn btn-common text-uppercase">Shop accessories</a>
+                                    <a href="/shop/accessory" class="btn btn-common text-uppercase">악세사리</a>
                                 </div>
                             </div>
                         </div>
@@ -771,175 +773,6 @@
         </div>
     </section>
 
-    <section id="billboard" class="bg-light py-5">
-        <div style="background-color: white">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <h1 class="section-title text-center mt-4" data-aos="fade-up">Best Seller</h1>
-                    <div class="col-md-6 text-center" data-aos="fade-up" data-aos-delay="300">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="swiper main-swiper py-4" data-aos="fade-up" data-aos-delay="600">
-                        <div class="swiper-wrapper d-flex border-animation-left">
-                            <div class="swiper-slide">
-                                <div class="banner-item image-zoom-effect">
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="image/banner-image-8.jpg" alt="product" class="product-image">
-                                        </a>
-                                    </div>
-                                    <div class="banner-content py-4">
-                                        <h5 class="element-title text-uppercase">
-                                            <a href="index.html" class="item-anchor">Soft leather jackets</a>
-                                        </h5>
-                                        <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                        <div class="btn-left">
-                                            <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="banner-item image-zoom-effect">
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="image/banner-image-1.jpg" alt="product" class="product-image">
-                                        </a>
-                                    </div>
-                                    <div class="banner-content py-4">
-                                        <h5 class="element-title text-uppercase">
-                                            <a href="index.html" class="item-anchor">Soft leather jackets</a>
-                                        </h5>
-                                        <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                        <div class="btn-left">
-                                            <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="banner-item image-zoom-effect">
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="image/banner-image-2.jpg" alt="product" class="product-image">
-                                        </a>
-                                    </div>
-                                    <div class="banner-content py-4">
-                                        <h5 class="element-title text-uppercase">
-                                            <a href="index.html" class="item-anchor">Soft leather jackets</a>
-                                        </h5>
-                                        <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                        <div class="btn-left">
-                                            <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="banner-item image-zoom-effect">
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="image/banner-image-3.jpg" alt="product" class="product-image">
-                                        </a>
-                                    </div>
-                                    <div class="banner-content py-4">
-                                        <h5 class="element-title text-uppercase">
-                                            <a href="index.html" class="item-anchor">Soft leather jackets</a>
-                                        </h5>
-                                        <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                        <div class="btn-left">
-                                            <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="banner-item image-zoom-effect">
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="image/banner-image-4.jpg" alt="product" class="product-image">
-                                        </a>
-                                    </div>
-                                    <div class="banner-content py-4">
-                                        <h5 class="element-title text-uppercase">
-                                            <a href="index.html" class="item-anchor">Out crop sweater</a>
-                                        </h5>
-                                        <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                        <div class="btn-left">
-                                            <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="banner-item image-zoom-effect">
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="image/banner-image-5.jpg" alt="product" class="product-image">
-                                        </a>
-                                    </div>
-                                    <div class="banner-content py-4">
-                                        <h5 class="element-title text-uppercase">
-                                            <a href="index.html" class="item-anchor">Soft leather jackets</a>
-                                        </h5>
-                                        <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                        <div class="btn-left">
-                                            <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="banner-item image-zoom-effect">
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="image/banner-image-6.jpg" alt="product" class="product-image">
-                                        </a>
-                                    </div>
-                                    <div class="banner-content py-4">
-                                        <h5 class="element-title text-uppercase">
-                                            <a href="index.html" class="item-anchor">Soft leather jackets</a>
-                                        </h5>
-                                        <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                        <div class="btn-left">
-                                            <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="banner-item image-zoom-effect">
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="image/banner-image-7.jpg" alt="product" class="product-image">
-                                        </a>
-                                    </div>
-                                    <div class="banner-content py-4">
-                                        <h5 class="element-title text-uppercase">
-                                            <a href="index.html" class="item-anchor">Soft leather jackets</a>
-                                        </h5>
-                                        <p>Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.</p>
-                                        <div class="btn-left">
-                                            <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                    <div class="icon-arrow icon-arrow-left"><svg width="50" height="50" viewBox="0 0 24 24">
-                        <use xlink:href="#arrow-left"></use>
-                    </svg></div>
-                    <div class="icon-arrow icon-arrow-right"><svg width="50" height="50" viewBox="0 0 24 24">
-                        <use xlink:href="#arrow-right"></use>
-                    </svg></div>
-                </div>
-            </div>
-        </div>
-
-    </section>
 
 
     <section class="collection bg-light position-relative py-5">

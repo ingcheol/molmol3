@@ -44,9 +44,6 @@
 
 <!-- ✅ 본문 내용 -->
 <div class="mb-3 d-flex justify-content-between">
-  <div>
-    <a href="/" class="btn btn-secondary">홈으로</a>
-  </div>
 <div class="container text-center mt-5">
   <h2>스타 INSTAGRAM</h2>
   <p>방송, 공항, SNS 속 연예인 착장을 인스타로 한눈에 확인해보세요!</p>

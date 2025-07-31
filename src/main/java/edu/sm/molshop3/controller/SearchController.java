@@ -31,6 +31,26 @@ public class SearchController {
             return "redirect:/blog/video";
         }
 
+        if (keyword.contains("베스트") || keyword.contains("best") || keyword.contains("베스트 착장") || keyword.contains("베스트착장")) {
+            return "redirect:/home/best";
+        }
+
+        if (keyword.contains("new") || keyword.contains("신상") || keyword.contains("신상 착장") || keyword.contains("신상착장")) {
+            return "redirect:/home/new";
+        }
+
+        if (keyword.contains("cart") || keyword.contains("장바구니")) {
+            return "redirect:/cart";
+        }
+
+        if (keyword.contains("리뷰") || keyword.contains("리뷰 작성") || keyword.contains("리뷰작성") || keyword.contains("review")) {
+            return "redirect:/pages/review";
+        }
+
+        if (keyword.contains("로그인") || keyword.contains("회원가입") || keyword.contains("login")) {
+            return "redirect:/login";
+        }
+
         // 검색어가 안 맞으면 기본 페이지나 검색 결과 없음 페이지
         return "redirect:/notfound";
     }

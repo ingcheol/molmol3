@@ -43,9 +43,6 @@
 <body>
 
 <!-- ✅ 본문 내용 -->
-<div>
-  <a href="/" class="btn btn-secondary">홈으로</a>
-</div>
 <div class="container mt-5">
   <h2 class="text-center mb-4">신상 착장 리스트</h2>
   <div class="row row-cols-1 row-cols-md-3 g-4">
