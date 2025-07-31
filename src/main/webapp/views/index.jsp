@@ -414,7 +414,6 @@
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
                                     <li><a href="/blog/star" class="dropdown-item item-anchor">스타 INSTAGRAM</a></li>
                                     <li><a href="/blog/tip" class="dropdown-item item-anchor">스타일링 팁</a></li>
-                                    <li><a href="/blog/review" class="dropdown-item item-anchor">사용자 후기</a></li>
                                     <li><a href="/blog/video" class="dropdown-item item-anchor">스타일 영상</a></li>
                                 </ul>
                             </li>

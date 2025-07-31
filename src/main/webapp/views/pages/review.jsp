@@ -403,13 +403,6 @@
           구매한 상품들
         </h3>
 
-        <!-- 디버깅을 위한 임시 출력 -->
-        <div style="background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px; font-size: 12px;">
-          <strong>디버깅 정보:</strong><br>
-          orderList 존재 여부: ${not empty orderList}<br>
-          orderList 크기: ${orderList.size()}<br>
-          logincust 정보: ${sessionScope.logincust.custName}<br>
-        </div>
 
         <c:choose>
           <c:when test="${not empty orderList}">
