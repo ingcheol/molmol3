@@ -388,10 +388,10 @@
                                 <a class="nav-link dropdown-toggle active" href="#" id="dropdownHome" data-bs-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false">Home</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownHome">
-                                    <li><a href="/home/best" class="dropdown-item item-anchor">베스트 착장</a></li>
-                                    <li><a href="/home/new" class="dropdown-item item-anchor">신상 착장</a></li>
+                                    <li><a href="index.html" class="dropdown-item item-anchor">베스트 착장</a></li>
+                                    <li><a href="index.html" class="dropdown-item item-anchor">신상 착장</a></li>
+                                    <li><a href="index.html" class="dropdown-item item-anchor">세트 착장 모음</a></li>
                                 </ul>
-
                             </li>
 
                             <li class="nav-item dropdown">
@@ -428,16 +428,23 @@
                                     <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
                                     <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
                                 </ul>
+
                             </li>
 
                             <!-- 상단 목록 로그인, 카트, 위시 리스트 -->
-                            <a href="/wishlist" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
-                                WISHLIST <span class="wishlist-count ms-1">(0)</span>
-                            </a>
-
-                            <a href="/cart" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
-                                CART <span class="cart-count ms-1">(0)</span>
-                            </a>
+                            <div class="col-3 col-lg-auto">
+                                <ul class="list-unstyled d-flex m-0 align-items-center">
+                                    <li class="nav-link">
+                                        <a href="index.html" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
+                                            WISHLIST <span class="wishlist-count ms-1">(0)</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="index.html" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1"
+                                           data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                                            CART <span class="cart-count ms-1">(0)</span>
+                                        </a>
+                                    </li>
                                     <c:choose>
                                         <c:when test="${not empty logincust}">
                                             <li class="nav-link">
@@ -925,42 +932,146 @@
             </div>
         </div>
     </section>
-<footer class="bg-light py-5 mt-5 border-top">
-    <div class="container">
-        <div class="row text-center text-md-start">
-            <!-- 🔸 브랜드 정보 -->
-            <div class="col-md-4 mb-4">
-                <img src="/image/main-logo.png" alt="깔롱드 로고" style="width:150px;">
-                <p class="mt-3">좋아하는 연예인이 오늘 입은 옷이 궁금하다면,<br>스타일의 모든 순간을 지금 바로 확인해보세요.</p>
-                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2">
-                    <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+
+
+
+    <footer id="footer" class="mt-5">
+        <div class="container">
+            <div class="row d-flex flex-wrap justify-content-between py-5">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu footer-menu-001">
+                        <div class="footer-intro mb-4">
+                            <a href="index.html">
+                                <img src="image/main-logo.png" alt="logo" style="width: 150px; height: auto;" />
+                            </a>
+                        </div>
+                        <p>좋아하는 연예인이 오늘 입은 옷이 궁금하다면
+                            스타일의 모든 순간을 지금 바로 확인해보세요.</p>
+                        <div class="social-links">
+                            <ul class="list-unstyled d-flex flex-wrap gap-3">
+                                <li>
+                                    <a href="#" class="text-secondary">
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href="#facebook"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-secondary">
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href="#twitter"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-secondary">
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href="#youtube"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-secondary">
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href="#pinterest"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-secondary">
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href="#instagram"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu footer-menu-002">
+                        <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
+                        <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
+                            <li class="menu-item">
+                                <a href="index.html" class="item-anchor">Home</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="index.html" class="item-anchor">About</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="blog.html" class="item-anchor">Services</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="styles.html" class="item-anchor">Single item</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="item-anchor">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu footer-menu-003">
+                        <h5 class="widget-title text-uppercase mb-4">Help & Info</h5>
+                        <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
+                            <li class="menu-item">
+                                <a href="#" class="item-anchor">Track Your Order</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="item-anchor">Returns + Exchanges</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="item-anchor">Shipping + Delivery</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="item-anchor">Contact Us</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="item-anchor">Find us easy</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="index.html" class="item-anchor">Faqs</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu footer-menu-004 border-animation-left">
+                        <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
+                        <p>Do you have any questions or suggestions? <a href="mailto:contact@yourcompany.com"
+                                                                        class="item-anchor">contact@yourcompany.com</a></p>
+                        <p>Do you need support? Give us a call. <a href="tel:+43 720 11 52 78" class="item-anchor">+43 720 11 52
+                            78</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-
-            <!-- 🔸 관리자/운영정보 -->
-            <div class="col-md-4 mb-4">
-                <h5 class="text-uppercase fw-bold mb-3">운영자 정보</h5>
-                <ul class="list-unstyled fs-6">
-                    <li><strong>대표:</strong> 정승혁</li>
-                    <li><strong>사업자 등록번호:</strong> 123-45-67890</li>
-                    <li><strong>대표 이메일:</strong> <a href="mailto:admin@kallongde.com" class="text-decoration-none">admin@kallongde.com</a></li>
-                    <li><strong>고객센터:</strong> <a href="tel:010-1234-5678" class="text-decoration-none">010-1234-5678</a></li>
-                </ul>
-            </div>
-
-            <!-- 🔸 주소 및 문의 -->
-            <div class="col-md-4 mb-4">
-                <h5 class="text-uppercase fw-bold mb-3">본사 주소</h5>
-                <p class="fs-6 mb-1">서울특별시 강남구 테헤란로 123, 5층</p>
-                <p class="fs-6 mb-1">운영시간: 평일 10:00 - 18:00</p>
-                <p class="fs-6">문의사항은 전화를 이용해주세요.</p>
+        </div>
+        <div class="border-top py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d-flex flex-wrap">
+                        <div class="shipping">
+                            <span>We ship with:</span>
+                            <img src="image/arct-icon.png" alt="icon">
+                            <img src="image/dhl-logo.png" alt="icon">
+                        </div>
+                        <div class="payment-option">
+                            <span>Payment Option:</span>
+                            <img src="image/visa-card.png" alt="card">
+                            <img src="image/paypal-card.png" alt="card">
+                            <img src="image/master-card.png" alt="card">
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <p>© Copyright 2025 꼴랑드. All rights reserved. Design by <a href="https://templatesjungle.com"
+                                                                                   target="_blank">TemplatesJungle</a>
+                            Distribution By <a href="https://themewagon.com" target="blank">ThemeWagon</a></p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/SmoothScroll.js"></script>
