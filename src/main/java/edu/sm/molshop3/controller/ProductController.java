@@ -2,8 +2,10 @@ package edu.sm.molshop3.controller;
 
 import edu.sm.molshop3.dto.Product;
 import edu.sm.molshop3.dto.ProductImage;
+import edu.sm.molshop3.dto.Review;
 import edu.sm.molshop3.service.ProductImageService;
 import edu.sm.molshop3.service.ProductService;
+import edu.sm.molshop3.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +19,8 @@ import java.util.List;
 public class ProductController {
 
     private final ProductService productService;
-    private final ProductImageService productImageService; // 이미지 서비스 주입
+    private final ProductImageService productImageService;
+    private final ReviewService reviewService;
 
     @GetMapping("/product/see")
     public String see(@RequestParam(value = "productId", required = false) Integer productId, Model model) throws Exception {
@@ -26,15 +29,17 @@ public class ProductController {
         }
 
         Product p = productService.get(productId);
-
-        // 대표 이미지 설정
         List<ProductImage> images = productImageService.getByProductId(productId);
         if (!images.isEmpty()) {
-            p.setImage(images.get(0).getProductImgUrl()); // 대표 이미지 URL 세팅
-            p.setImages(images); // 이미지 리스트도 필요하면
+            p.setImage(images.get(0).getProductImgUrl());
+            p.setImages(images);
         }
 
+        // 🔥 리뷰 추가
+        List<Review> reviews = reviewService.getReviewsByProduct(productId);
         model.addAttribute("product", p);
+        model.addAttribute("reviews", reviews);
+
         return "product/see";
     }
 }
