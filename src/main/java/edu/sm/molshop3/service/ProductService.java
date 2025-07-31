@@ -30,6 +30,10 @@ public class ProductService {
         }
         return products;
     }
+    public List<Product> getProductsByIds(List<Integer> ids) throws Exception {
+        return productRepository.selectByIds(ids);
+    }
+
 
     // 🔹 전체 상품 리스트 조회 (관리자용)
     @Transactional(readOnly = true)

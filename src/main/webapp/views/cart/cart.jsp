@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<jsp:include page="/views/header.jsp" />
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -12,16 +13,6 @@
 <body>
 <div class="container mt-5">
 
-  <!-- 상단 이동 버튼 -->
-  <div class="d-flex justify-content-between mb-3">
-    <a href="/" class="btn btn-secondary">&larr; 홈으로</a>
-    <c:if test="${not empty prevPage}">
-      <a href="/shop/${prevPage}" class="btn btn-primary">🛍️ 쇼핑 계속하기</a>
-    </c:if>
-    <c:if test="${empty prevPage}">
-      <a href="/" class="btn btn-primary">🛍️ 쇼핑 계속하기</a>
-    </c:if>
-  </div>
 
   <h2 class="mb-4">🛒 장바구니</h2>
 

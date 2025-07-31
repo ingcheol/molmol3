@@ -2,6 +2,7 @@ package edu.sm.molshop3.repository;
 
 import edu.sm.molshop3.dto.Product;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,4 +19,5 @@ public interface ProductRepository {
     List<Product> selectAllWithImages();
     List<Product> selectBest();
     List<Product> selectNew();
+    List<Product> selectByIds(@Param("ids") List<Integer> ids);
 }
