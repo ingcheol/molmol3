@@ -31,9 +31,17 @@ public class ProductService {
         return products;
     }
     public List<Product> getProductsByIds(List<Integer> ids) throws Exception {
-        return productRepository.selectByIds(ids);
+        if (ids == null || ids.isEmpty()) return List.of();
+        List<Product> products = productRepository.selectByIds(ids);
+        for (Product p : products) {
+            List<ProductImage> imgs = productImageRepository.selectByProductId(p.getProductId());
+            p.setImages(imgs);
+            if (imgs != null && !imgs.isEmpty()) {
+                p.setImage(imgs.get(0).getProductImgUrl());
+            }
+        }
+        return products;
     }
-
 
     // 🔹 전체 상품 리스트 조회 (관리자용)
     @Transactional(readOnly = true)

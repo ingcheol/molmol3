@@ -44,4 +44,25 @@ public class ReviewController {
         reviewService.addReview(review);
         return "redirect:/product/see?productId=" + review.getProductId();
     }
+    @PostMapping("/review/delete")
+    public String deleteReview(@RequestParam("reviewId") int reviewId,
+                               @RequestParam("productId") int productId,
+                               HttpSession session) throws Exception {
+        Cust loginUser = (Cust) session.getAttribute("logincust");
+
+        if (loginUser == null) {
+            return "redirect:/login";
+        }
+
+        Review review = reviewService.get(reviewId);
+
+        if (review != null &&
+                (loginUser.getCustId().equals(review.getCustId()) ||
+                        loginUser.getCustId().equals("admin"))) {
+            reviewService.remove(reviewId);
+        }
+
+        return "redirect:/product/see?id=" + productId;
+    }
+
 }

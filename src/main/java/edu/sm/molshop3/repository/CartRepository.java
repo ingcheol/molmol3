@@ -2,6 +2,7 @@ package edu.sm.molshop3.repository;
 
 import edu.sm.molshop3.dto.Cart;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface CartRepository {
 
     // 🔹 결제 완료 시 고객 장바구니 비우기
     void deleteByCustId(String custId);
+    Cart findByCustIdAndProductId(@Param("custId") String custId, @Param("productId") int productId);
+
 }

@@ -484,135 +484,181 @@
                         <div class="swiper-slide">
                             <div class="banner-item image-zoom-effect">
                                 <div class="image-holder">
-                                    <a href="#">
+                                    <a href="javascript:void(0);"
+                                       class="item-anchor open-set-modal"
+                                       data-set-id="seulgi1">
                                         <img src="image/banner-image-8.jpg" alt="product" class="product-image">
                                     </a>
                                 </div>
                                 <div class="banner-content py-4">
                                     <h5 class="element-title text-uppercase">
-                                        <a href="/product?id=karina8" class="item-anchor">슬기 캐주얼룩</a>
+                                        <a href="javascript:void(0);"
+                                           class="item-anchor open-set-modal"
+                                           data-set-id="seulgi1">
+                                            슬기 캐주얼룩
+                                        </a>
                                     </h5>
-                                    <p>꾸안꾸의 정석!<br/>
-                                        스트라이프 티셔츠로 완성한 데일리 스타일링</p>
+                                    <p>
+                                        꾸안꾸의 정석!<br/>
+                                        스트라이프 티셔츠로 완성한 데일리 스타일링
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
                             <div class="banner-item image-zoom-effect">
                                 <div class="image-holder">
-                                    <a href="#">
+                                    <a href="javascript:void(0);"
+                                       class="item-anchor open-set-modal"
+                                       data-set-id="karina1">
                                         <img src="image/banner-image-1.jpg" alt="product" class="product-image">
                                     </a>
                                 </div>
                                 <div class="banner-content py-4">
                                     <h5 class="element-title text-uppercase">
-                                        <a href="/product?id=karina1" class="item-anchor">카리나 공항 패션</a>
+                                        <a href="javascript:void(0);"
+                                           class="item-anchor open-set-modal"
+                                           data-set-id="karina1">
+                                            카리나 공항 패션
+                                        </a>
                                     </h5>
                                     <p>
                                         실물 느낌 그대로,<br/>
                                         지금 바로 카리나 착용 아이템 GET!
                                     </p>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="swiper-slide">
+                            <div class="banner-item image-zoom-effect">
+                                <div class="image-holder">
+                                    <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="winter1">
+                                        <img src="image/banner-image-2.jpg" alt="윈터 블랙 드레스룩" class="product-image">
+                                    </a>
+                                </div>
+                                <div class="banner-content py-4">
+                                    <h5 class="element-title text-uppercase">
+                                        <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="winter1">
+                                            윈터 블랙 드레스룩
+                                        </a>
+                                    </h5>
+                                    <p>
+                                        실루엣이 돋보이는 블랙 드레스로<br/>
+                                        레드카펫 위 여신 미모 완성!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="banner-item image-zoom-effect">
+                                <div class="image-holder">
+                                    <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="karina2">
+                                        <img src="image/banner-image-3.jpg" alt="카리나 블랙 캐주얼 공항패션" class="product-image">
+                                    </a>
+                                </div>
+                                <div class="banner-content py-4">
+                                    <h5 class="element-title text-uppercase">
+                                        <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="karina2">
+                                            카리나 블랙 캐주얼 공항패션
+                                        </a>
+                                    </h5>
+                                    <p>
+                                        올블랙으로 완성한 시크한 매력!<br/>
+                                        꾸안꾸의 정석, 스타일과 편안함을 동시에
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="banner-item image-zoom-effect">
                                 <div class="image-holder">
-                                    <a href="#">
-                                        <img src="image/banner-image-2.jpg" alt="product" class="product-image">
+                                    <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="seulgi2">
+                                        <img src="image/banner-image-4.jpg" alt="슬기 무대 의상 스타일링" class="product-image">
                                     </a>
                                 </div>
                                 <div class="banner-content py-4">
                                     <h5 class="element-title text-uppercase">
-                                        <a href="/product?id=karina2" class="item-anchor">윈터 블랙 드레스룩</a>
+                                        <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="seulgi2">
+                                            슬기 무대 의상 스타일링
+                                        </a>
                                     </h5>
-                                    <p>실루엣이 돋보이는 블랙 드레스로<br/>
-                                        레드카펫 위 여신 미모 완성!</p>
+                                    <p>
+                                        무대 위에서 빛나는 실버 & 블랙 조합<br/>
+                                        독보적인 존재감, 무대 패션 끝판왕!
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
+
                         <div class="swiper-slide">
                             <div class="banner-item image-zoom-effect">
                                 <div class="image-holder">
-                                    <a href="#">
-                                        <img src="image/banner-image-3.jpg" alt="product" class="product-image">
+                                    <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="winter2">
+                                        <img src="image/banner-image-5.jpg" alt="윈터 시크 스트릿 무드" class="product-image">
                                     </a>
                                 </div>
                                 <div class="banner-content py-4">
                                     <h5 class="element-title text-uppercase">
-                                        <a href="/product?id=karina3" class="item-anchor">카리나 블랙 캐주얼 공항패션</a>
+                                        <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="winter2">
+                                            윈터 시크 스트릿 무드
+                                        </a>
                                     </h5>
-                                    <p>올블랙으로 완성한 시크한 매력!<br/>
-                                        꾸안꾸의 정석, 스타일과 편안함을 동시에</p>
+                                    <p>
+                                        시선 강탈, 쿨한 무드 그대로<br/>
+                                        도심 위 힙한 스트릿 감성 완성!
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
                             <div class="banner-item image-zoom-effect">
                                 <div class="image-holder">
-                                    <a href="#">
-                                        <img src="image/banner-image-4.jpg" alt="product" class="product-image">
+                                    <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="seulgi3">
+                                        <img src="image/banner-image-6.jpg" alt="슬기 세이렌 무드" class="product-image">
                                     </a>
                                 </div>
                                 <div class="banner-content py-4">
                                     <h5 class="element-title text-uppercase">
-                                        <a href="/product?id=karina4" class="item-anchor">슬기 무대 의상 스타일링</a>
+                                        <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="seulgi3">
+                                            슬기 세이렌 무드
+                                        </a>
                                     </h5>
-                                    <p>무대 위에서 빛나는 실버 & 블랙 조합<br/>독보적인 존재감, 무대 패션 끝판왕!</p>
+                                    <p>
+                                        몽환적인 무드 속 우아한 실루엣<br/>
+                                        슬기만의 고요하고 깊은 분위기를 입다
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
                             <div class="banner-item image-zoom-effect">
                                 <div class="image-holder">
-                                    <a href="#">
-                                        <img src="image/banner-image-5.jpg" alt="product" class="product-image">
+                                    <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="winter3">
+                                        <img src="image/banner-image-7.jpg" alt="윈터 트렌디 스트릿룩" class="product-image">
                                     </a>
                                 </div>
                                 <div class="banner-content py-4">
                                     <h5 class="element-title text-uppercase">
-                                        <a href="/product?id=karina5" class="item-anchor">윈터 시크 스트릿 무드</a>
+                                        <a href="javascript:void(0);" class="item-anchor open-set-modal" data-set-id="winter3">
+                                            윈터 트렌디 스트릿룩
+                                        </a>
                                     </h5>
-                                    <p>시선 강탈, 쿨한 무드 그대로<br/>
-                                        도심 위 힙한 스트릿 감성 완성!</p>
+                                    <p>
+                                        도심을 찢는 강렬한 아우라<br/>
+                                        유행을 선도하는 힙한 블랙핏을 지금 바로 만나보세요
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="banner-item image-zoom-effect">
-                                <div class="image-holder">
-                                    <a href="#">
-                                        <img src="image/banner-image-6.jpg" alt="product" class="product-image">
-                                    </a>
-                                </div>
-                                <div class="banner-content py-4">
-                                    <h5 class="element-title text-uppercase">
-                                        <a href="/product?id=karina6" class="item-anchor">슬기 세이렌 무드</a>
-                                    </h5>
-                                    <p>몽환적인 무드 속 우아한 실루엣<br/>
-                                        슬기만의 고요하고 깊은 분위기를 입다</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="banner-item image-zoom-effect">
-                                <div class="image-holder">
-                                    <a href="#">
-                                        <img src="image/banner-image-7.jpg" alt="product" class="product-image">
-                                    </a>
-                                </div>
-                                <div class="banner-content py-4">
-                                    <h5 class="element-title text-uppercase">
-                                        <a href="/product?id=karina7" class="item-anchor">윈터 트렌디 스트릿룩</a>
-                                    </h5>
-                                    <p>도심을 찢는 강렬한 아우라<br/>
-                                        유행을 선도하는 힙한 블랙핏을 지금 바로 만나보세요</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
+
+
+                        <div class="swiper-pagination"></div>
                 </div>
                 <div class="icon-arrow icon-arrow-left"><svg width="50" height="50" viewBox="0 0 24 24">
                     <use xlink:href="#arrow-left"></use>
@@ -1015,6 +1061,40 @@
 
 
     </script>
+    <script>
+        $(function() {
+            $('.open-set-modal').click(function() {
+                const setId = $(this).data('set-id');
+
+                $.ajax({
+                    url: '/set/getItems',
+                    data: { setId: setId },
+                    success: function(res) {
+                        $('#setModal .modal-body').html(res);
+                        $('#setModal').modal('show');
+                    },
+                    error: function() {
+                        alert("세트 구성 정보를 불러오는 데 실패했습니다.");
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- 세트 구성 모달 -->
+    <div class="modal fade" id="setModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">세트 구성</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
 
 
 </div>

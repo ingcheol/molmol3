@@ -86,4 +86,22 @@ public class CartController {
 
         return "redirect:/cart?prevPage=" + cart.getPrevPage();
     }
+    @PostMapping("/cart/add")
+    public String addCart(@ModelAttribute Cart cart, HttpSession session) {
+        // ... cart insert 로직
+        return "redirect:/cart";
+    }
+
+    @PostMapping("/addSet")
+    public String addSetToCart(
+            @RequestParam("productIds") List<Integer> productIds,
+            HttpSession session
+    ) throws Exception {
+        Cust cust = (Cust) session.getAttribute("logincust");
+        if (cust == null) return "redirect:/login";
+        for (Integer pid : productIds) {
+            cartService.addCart(cust.getCustId(), pid, 1);
+        }
+        return "redirect:/cart";
+    }
 }

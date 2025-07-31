@@ -38,4 +38,19 @@ public class CartServiceImpl implements CartService {
     public void checkout(String custId) throws Exception {
         cartRepository.deleteByCustId(custId);
     }
+
+    @Override
+    public void addCart(String custId, int productId, int quantity) throws Exception {
+        Cart cart = cartRepository.findByCustIdAndProductId(custId, productId);
+        if (cart != null) {
+            cartRepository.updateQuantity(cart.getCartId(), cart.getProductQt() + quantity);
+        } else {
+            Cart newCart = new Cart();
+            newCart.setCustId(custId);
+            newCart.setProductId(productId);
+            newCart.setProductQt(quantity);
+            cartRepository.insert(newCart);
+        }
+    }
+
 }
