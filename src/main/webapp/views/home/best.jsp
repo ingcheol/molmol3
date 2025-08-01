@@ -44,7 +44,7 @@
 
 <!-- ✅ 본문 내용 -->
 <div class="container mt-5">
-  <h2 class="text-center mb-4">신상 착장 리스트</h2>
+  <h2 class="text-center mb-4">베스트 착장 리스트</h2>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <c:forEach var="p" items="${plist}">
       <div class="col">

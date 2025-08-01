@@ -1,13 +1,12 @@
 package edu.sm.molshop3.dto;
+import java.sql.Timestamp;
 
 import lombok.Data;
-
-import java.sql.Date;
 
 @Data
 public class Review {
     private int reviewId;
-    private Date regDate;
+    private Timestamp regDate;
     private int score;
     private String content;
     private String custId;

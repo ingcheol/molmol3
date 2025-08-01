@@ -824,17 +824,17 @@
                 <ul class="list-unstyled fs-6">
                     <li><strong>대표:</strong> 정승혁</li>
                     <li><strong>사업자 등록번호:</strong> 123-45-67890</li>
-                    <li><strong>대표 이메일:</strong> <a href="mailto:admin@kallongde.com" class="text-decoration-none">admin@kallongde.com</a></li>
-                    <li><strong>고객센터:</strong> <a href="tel:010-1234-5678" class="text-decoration-none">010-1234-5678</a></li>
+                    <li><strong>대표 이메일:</strong> <a href="mailto:5397jsp@gmail.com" class="text-decoration-none">5397jsp@gmail.com</a></li>
+                    <li><strong>고객센터:</strong> <a href="tel:010-3950-5397" class="text-decoration-none">010-3950-5397</a></li>
                 </ul>
             </div>
 
             <!-- 🔸 주소 및 문의 -->
             <div class="col-md-4 mb-4">
                 <h5 class="text-uppercase fw-bold mb-3">본사 주소</h5>
-                <p class="fs-6 mb-1">서울특별시 강남구 테헤란로 123, 5층</p>
-                <p class="fs-6 mb-1">운영시간: 평일 10:00 - 18:00</p>
-                <p class="fs-6">문의사항은 전화를 이용해주세요.</p>
+                <p class="fs-6 mb-1">충남 아산시 탕정면 탕정면로 119-4</p>
+                <p class="fs-6 mb-1">영업시간 : 연중무휴</p>
+                <p class="fs-6">문의사항은 문 앞에 두고 벨 눌러주세요</p>
             </div>
         </div>
     </div>
