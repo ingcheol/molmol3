@@ -87,7 +87,7 @@
 
 ## 😎 메인 화면
 
-![메인화면](src/main/resources/static/image/mainimage.png)
+![메인화면](src/main/resources/static/image/mainmainimage.png)
 
 ## ERD
 
