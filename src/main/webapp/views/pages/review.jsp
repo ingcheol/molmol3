@@ -449,7 +449,7 @@
               <i class="fas fa-shopping-cart"></i>
               <h4>구매 내역이 없습니다</h4>
               <p>먼저 상품을 구매한 후 리뷰를 작성해주세요.</p>
-              <a href="/index" class="btn-login">
+              <a href="/home/best" class="btn-login">
                 <i class="fas fa-shopping-bag"></i>
                 쇼핑하러 가기
               </a>

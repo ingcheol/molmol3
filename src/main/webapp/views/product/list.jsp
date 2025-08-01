@@ -16,9 +16,6 @@
   <!-- 홈 + 등록 버튼 -->
   <div class="mb-3 d-flex justify-content-between">
     <div>
-      <a href="/" class="btn btn-secondary">🏠으로</a>
-    </div>
-    <div>
       <a href="/admin/product/add" class="btn btn-primary">상품 등록</a>
     </div>
   </div>

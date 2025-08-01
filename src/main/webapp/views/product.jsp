@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<jsp:include page="/views/header.jsp" />
+
 <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
   <div class="container-fluid">
     <div class="row justify-content-between align-items-center w-100">
@@ -27,106 +29,33 @@
         <a href="/admin/cust/list" class="nav-link fw-bold text-danger" style="font-size: 20px;">🔧 회원관리(Admin)</a>
       </div>
     </c:if>
-
-    <div class="col-auto">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-           aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                  aria-label="Close"></button>
-        </div>
-
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3">
-
-            <!-- HOME -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" id="dropdownHome" data-bs-toggle="dropdown"
-                 aria-haspopup="true" aria-expanded="false">Home</a>
-              <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownHome">
-                <li><a href="index.html" class="dropdown-item item-anchor">베스트 착장</a></li>
-                <li><a href="index.html" class="dropdown-item item-anchor">신상 착장</a></li>
-                <li><a href="index.html" class="dropdown-item item-anchor">세트 착장 모음</a></li>
-              </ul>
-            </li>
-
-            <!-- SHOP -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownShop" data-bs-toggle="dropdown"
-                 aria-haspopup="true" aria-expanded="false">Shop</a>
-              <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownShop">
-                <li><a href="/shop/top" class="dropdown-item item-anchor">상의</a></li>
-                <li><a href="/shop/bottom" class="dropdown-item item-anchor">하의</a></li>
-                <li><a href="/shop/hat" class="dropdown-item item-anchor">모자</a></li>
-                <li><a href="/shop/shoes" class="dropdown-item item-anchor">신발</a></li>
-                <li><a href="/shop/bag" class="dropdown-item item-anchor">가방</a></li>
-                <li><a href="/shop/accessory" class="dropdown-item item-anchor">악세사리</a></li>
-              </ul>
-            </li>
-
-            <!-- BLOG -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownBlog" data-bs-toggle="dropdown"
-                 aria-haspopup="true" aria-expanded="false">Blog</a>
-              <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownBlog">
-                <li><a href="/blog/star" class="dropdown-item item-anchor">스타 INSTAGRAM</a></li>
-                <li><a href="/blog/tip" class="dropdown-item item-anchor">스타일링 팁</a></li>
-                <li><a href="/blog/review" class="dropdown-item item-anchor">사용자 후기</a></li>
-                <li><a href="/blog/video" class="dropdown-item item-anchor">스타일 영상</a></li>
-              </ul>
-            </li>
-
-            <!-- PAGES -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
-                 aria-haspopup="true" aria-expanded="false">Pages</a>
-              <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
-                <li><a href="/pages/information" class="dropdown-item item-anchor">내 정보</a></li>
-                <li><a href="/cart" class="dropdown-item item-anchor">장바구니</a></li>
-                <li><a href="/pages/orders" class="dropdown-item item-anchor">주문 내역</a></li>
-                <li><a href="/pages/review" class="dropdown-item item-anchor">리뷰 작성</a></li>
-              </ul>
-            </li>
-
-            <!-- 로그인/카트/위시리스트 -->
-            <a href="/cart" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
-              CART <span class="cart-count ms-1">(0)</span>
-            </a>
-
-            <c:choose>
-              <c:when test="${not empty logincust}">
-                <li class="nav-link">
-                                    <span class="btn btn-light text-uppercase mx-1 px-3 py-1">
-                                        ${logincust.custName} 님
-                                    </span>
-                </li>
-                <li class="nav-link">
-                  <a href="/logout" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
-                    LOGOUT
-                  </a>
-                </li>
-              </c:when>
-              <c:otherwise>
-                <li class="nav-link">
-                  <a href="/login" class="btn btn-dark text-uppercase mx-1 px-3 py-1">
-                    LOGIN
-                  </a>
-                </li>
-              </c:otherwise>
-            </c:choose>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <c:choose>
+      <c:when test="${not empty logincust}">
+        <li class="nav-link">
+          <span class="btn btn-light text-uppercase mx-1 px-3 py-1">
+              ${logincust.custName} 님
+          </span>
+        </li>
+        <li class="nav-link">
+          <a href="/logout" class="btn btn-outline-dark text-uppercase mx-1 px-3 py-1">
+            LOGOUT
+          </a>
+        </li>
+      </c:when>
+      <c:otherwise>
+        <li class="nav-link">
+          <a href="/login" class="btn btn-dark text-uppercase mx-1 px-3 py-1">
+            LOGIN
+          </a>
+        </li>
+      </c:otherwise>
+    </c:choose>
+    </ul>
+  </div>
+  </div>
+  </div>
   </div>
 </nav>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>

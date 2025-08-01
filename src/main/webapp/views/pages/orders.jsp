@@ -319,7 +319,7 @@
             <h4>주문 내역이 없습니다</h4>
             <p>아직 구매하신 상품이 없어요.<br>다양한 스타일의 상품들을 둘러보세요!</p>
             <!-- 수정: /index로 변경 -->
-            <a href="/index" class="btn-shop">
+            <a href="/home/best" class="btn-shop">
                 <i class="fas fa-shopping-bag"></i>
                 쇼핑하러 가기
             </a>
