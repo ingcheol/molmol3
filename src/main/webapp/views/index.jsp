@@ -23,7 +23,6 @@
         display: block;
     }
 
-
     .swiper-slide {
         height: auto;
         display: flex;
@@ -33,6 +32,17 @@
     .image-holder {
         height: 300px; /* 이미지 높이 고정 */
         overflow: hidden;
+
+        /* ✅ 추가된 테두리 + 효과 */
+        border: 2px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-holder:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     }
 
     .only-collection-img {
@@ -112,6 +122,32 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         line-height: 1.4;
     }
+
+
+    /* 버튼 스타일 */
+    .swiper.main-swiper {
+        position: relative; /* 버튼 기준 위치 */
+        padding-bottom: 80px; /* 아래 공간 확보 */
+    }
+
+    .icon-arrow {
+        position: absolute;
+        bottom: 10px; /* 👈 화면 아래 안 벗어나도록 조정 */
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    .icon-arrow-left {
+        left: 30%;
+        transform: translateX(-50%);
+    }
+
+    .icon-arrow-right {
+        left: 70%;
+        transform: translateX(-50%);
+    }
+
+
 
 
 </style>
@@ -658,18 +694,19 @@
 
                     <div class="swiper-pagination"></div>
 
-                    <!-- ✅ 좌우 화살표: 상단에 떠있게 수정 -->
-                    <div class="icon-arrow icon-arrow-left" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); z-index: 10;">
+                    <div class="icon-arrow icon-arrow-left">
                         <svg width="50" height="50" viewBox="0 0 24 24">
                             <use xlink:href="#arrow-left"></use>
                         </svg>
                     </div>
-                    <div class="icon-arrow icon-arrow-right" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); z-index: 10;">
+                    <div class="icon-arrow icon-arrow-right">
                         <svg width="50" height="50" viewBox="0 0 24 24">
                             <use xlink:href="#arrow-right"></use>
                         </svg>
                     </div>
                 </div>
+            </div>
+        </div>
     </section>
 
     <section class="features py-5">
